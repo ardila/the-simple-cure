@@ -307,6 +307,21 @@
   .footnotes li { margin-bottom: 1.25rem; scroll-margin-top: calc(var(--headerH) + 1.5rem); }
   .footnotes li::marker { color: var(--cloud-dark); }
   .footnotes li p { margin: 0; }
+  .footnotes li p + table, .footnotes li table + p { margin-top: 0.75rem; }
+  .footnotes table {
+    border-collapse: collapse;
+    margin: 0.75rem 0;
+    font-size: 0.9375rem;
+    line-height: 1.45;
+  }
+  .footnotes th, .footnotes td {
+    padding: 0.3rem 1.5rem 0.3rem 0;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    font-weight: 400;
+  }
+  .footnotes thead th { font-weight: 600; }
+  .footnotes th:not(:first-child), .footnotes td:not(:first-child) { text-align: right; padding-right: 0; padding-left: 1.5rem; }
   .footnotes a { text-decoration-color: var(--cloud-dark); }
   a.footnote-back { text-decoration: none; margin-left: 0.25rem; }
 
@@ -322,6 +337,8 @@
     font-size: 1rem;
     line-height: 1.5;
     color: var(--text);
+    max-height: 60vh;
+    overflow-y: auto;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.14s ease, visibility 0.14s;
@@ -493,21 +510,25 @@
     ten million are people who already had a disease and did not get
     treated, or not enough to control it.</p>
     <p>So walk through the biggest killer. Here is the cured version of high
-    blood pressure, priced. A 47-year-old motorcycle courier in Nairobi
-    manages his health the way everyone will: through an agent on his phone.
-    The agent knows he is 47 and has never once measured his blood pressure,
-    so it asks him to fix that at any pharmacy counter, where a one-minute
+    blood pressure, priced. A 47-year-old HVAC tech in Columbus is one of <a
+    href="https://www.cdc.gov/nchs/products/databriefs/db558.htm">sixteen
+    million American men with no usual source of care</a> — one in eight,
+    headed for one in seven.<a href="#fn3" class="footnote-ref" id="fnref3"
+    role="doc-noteref"><sup>3</sup></a> He manages his health the way
+    everyone will: through an agent on his phone. The agent knows he is 47
+    and hasn’t had a blood pressure reading this decade, so it asks him to
+    fix that at the drugstore beside his next job, where a one-minute
     automatic cuff sits, a device built so that an untrained person gets a
-    clinical-grade reading.<a href="#fn3" class="footnote-ref" id="fnref3"
-    role="doc-noteref"><sup>3</sup></a> 168 over 104. The agent runs the
+    clinical-grade reading.<a href="#fn4" class="footnote-ref" id="fnref4"
+    role="doc-noteref"><sup>4</sup></a> 168 over 104. The agent runs the
     standard week of morning and evening confirmation readings, the numbers
-    hold, and it starts him on the national protocol’s single daily generic
-    pill. Then a monthly check-in, a nudge when the refill lapses, a dose
-    change when the numbers drift. His stroke never happens. Price the loop:
-    the cuff costs a fraction of a cent per reading, the computation
-    pennies, and no human time appears anywhere in it. The most expensive
-    component in curing the world’s biggest killer, per patient per year, is
-    the pill, and the pill costs a few dollars.</p>
+    hold, and it starts him on the guideline’s single daily generic pill —
+    four dollars a month on the pharmacy’s own list. Then a monthly
+    check-in, a nudge when the refill lapses, a dose change when the numbers
+    drift. His stroke never happens. Price the loop: the cuff costs a
+    fraction of a cent per reading, the computation pennies, and no human
+    time appears anywhere in it. The most expensive component in curing the
+    world’s biggest killer, per patient per year, is the pill.</p>
     <p>The hardware half of that loop shipped decades ago. Automatic cuffs
     sell in the hundreds of millions and sit in pharmacies and living rooms
     on every continent, and they changed little, because a reading alone
@@ -515,8 +536,8 @@
     start the drug, and chase the refill; <a
     href="https://doi.org/10.1371/journal.pmed.1002389">trials of
     self-monitoring show blood pressure barely moves unless something acts
-    on the readings</a>.<a href="#fn4" class="footnote-ref" id="fnref4"
-    role="doc-noteref"><sup>4</sup></a> That acting layer ran on clinician
+    on the readings</a>.<a href="#fn5" class="footnote-ref" id="fnref5"
+    role="doc-noteref"><sup>5</sup></a> That acting layer ran on clinician
     time, and clinician time costs more than this market bears. The device
     diffused. The judgment stayed expensive.</p>
     <p>Forty-six percent of hypertensives worldwide remain undiagnosed, with
@@ -534,8 +555,8 @@
     non-physician follow-up, while <a
     href="https://doi.org/10.1001/jama.2020.14545">US control fell to 44</a>
     and <a href="https://doi.org/10.1503/cmaj.101767">Canada, a whole
-    country, hit 65</a> against a world average of 21.<a href="#fn5"
-    class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>
+    country, hit 65</a> against a world average of 21.<a href="#fn6"
+    class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>
     Same population, same biology. The variable is the system supplying
     judgment and follow-through.</p>
     <p>Tuberculosis makes the point brutally: the treatment is already
@@ -555,15 +576,15 @@
     href="https://doi.org/10.1080/16506073.2017.1401115">clinician-guided
     digital therapy</a>; whether people stay engaged with fully automated
     therapy is unproven, and the near-term machine role is the follow-up and
-    measurement that today never happens.<a href="#fn6" class="footnote-ref"
-    id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
+    measurement that today never happens.<a href="#fn7" class="footnote-ref"
+    id="fnref7" role="doc-noteref"><sup>7</sup></a></p>
     <p>One limit. Some deaths need physical things: operating rooms, oxygen,
     dialysis, blood. <a
     href="https://doi.org/10.1016/S0140-6736%2815%2960160-X">Five billion
     people lack safe surgery</a>, and no consultation fixes that; mapping
     the published cause tables, I exclude roughly a fifth to a quarter of
-    the ten million.<a href="#fn7" class="footnote-ref" id="fnref7"
-    role="doc-noteref"><sup>7</sup></a></p>
+    the ten million.<a href="#fn8" class="footnote-ref" id="fnref8"
+    role="doc-noteref"><sup>8</sup></a></p>
     <p>Won’t better molecules fix delivery instead? They keep arriving, and
     they keep proving the point. The <a
     href="https://doi.org/10.1056/NEJMoa2407001">twice-yearly HIV shot</a>
@@ -574,18 +595,18 @@
     percent of the world’s girls</a> in eighteen years. Chemistry removes
     the need to remember a pill. Someone still has to find you, judge you
     eligible, and start you, and <a
-    href="https://www.cdc.gov/nchs/fastats/access-to-health-care.htm">one
-    American adult in eight</a> has no usual source of care. The gap is made
+    href="https://www.cdc.gov/nchs/products/databriefs/db558.htm">one
+    American adult in ten</a> has no usual source of care. The gap is made
     of judgment.</p>
     <h2 id="the-arithmetic-scaling-the-standard-curing-cancer">The
     arithmetic: scaling the standard &gt; curing cancer</h2>
     <p>Curing cancer entirely is worth about 140 million healthy years of
-    life per year,<a href="#fn8" class="footnote-ref" id="fnref8"
-    role="doc-noteref"><sup>8</sup></a> arriving in the 2040s at the
+    life per year,<a href="#fn9" class="footnote-ref" id="fnref9"
+    role="doc-noteref"><sup>9</sup></a> arriving in the 2040s at the
     earliest, conditional on the science. Delivering existing medicine to
     everyone is worth roughly 125 to 200 million healthy years per year,
-    starting now.<a href="#fn9" class="footnote-ref" id="fnref9"
-    role="doc-noteref"><sup>9</sup></a> The two are comparable on annual
+    starting now.<a href="#fn10" class="footnote-ref" id="fnref10"
+    role="doc-noteref"><sup>10</sup></a> The two are comparable on annual
     flow, with delivery likely larger, because these deaths come decades
     younger: pneumonia at two, TB at forty, stroke in the fifties. The
     decisive difference is timing. A fifteen-year head start makes delivery
@@ -624,8 +645,8 @@
     href="https://doi.org/10.1038/nrd3681">drug R&amp;D productivity halved
     every nine years for six decades</a> and that <a
     href="https://doi.org/10.1038/s43587-024-00702-3">life-expectancy gains
-    are decelerating</a>.<a href="#fn10" class="footnote-ref" id="fnref10"
-    role="doc-noteref"><sup>10</sup></a> The long bets are still worth
+    are decelerating</a>.<a href="#fn11" class="footnote-ref" id="fnref11"
+    role="doc-noteref"><sup>11</sup></a> The long bets are still worth
     making. These numbers say when they pay.</p>
     <p>And when the slow trials succeed, the winners join the queue behind
     the same bottleneck. Lung screening proved it saves lives in 2011.
@@ -707,12 +728,12 @@
     href="https://research.google/blog/collaborating-on-a-nationwide-randomized-study-of-ai-in-real-world-virtual-care/">Google
     has announced a nationwide randomized trial of the ResidencyRL-trained
     model in real virtual care</a>.<a
-    href="#fn11" class="footnote-ref" id="fnref11"
-    role="doc-noteref"><sup>11</sup></a> The open question is whether
+    href="#fn12" class="footnote-ref" id="fnref12"
+    role="doc-noteref"><sup>12</sup></a> The open question is whether
     simulation-trained skills survive real patients; the 94.9-to-34.5
     collapse is the warning, and that trial is the first direct test.<a
-    href="#fn12" class="footnote-ref" id="fnref12"
-    role="doc-noteref"><sup>12</sup></a> The failures blocking delivery are
+    href="#fn13" class="footnote-ref" id="fnref13"
+    role="doc-noteref"><sup>13</sup></a> The failures blocking delivery are
     training problems inside a loop a frontier lab controls end to end. The
     bottlenecks on discovery, cell cultures and years-long trial endpoints,
     sit outside any training loop ever built. “Closing fast” is credible for
@@ -721,8 +742,8 @@
     <p>Charities die on schedule. <a
     href="https://www.kff.org/global-health-policy/fact-sheet/the-u-s-presidents-emergency-plan-for-aids-relief-pepfar/">PEPFAR
     saved 25 million lives</a> and a stop-work order halted it overnight.
-    Babylon’s subsidized flagship went bankrupt mid-contract.<a href="#fn13"
-    class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a>
+    Babylon’s subsidized flagship went bankrupt mid-contract.<a href="#fn14"
+    class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a>
     The mobile phone reached everyone because someone profited at every
     handoff. Sustainability is a moral property of a system.</p>
     <p>This one sells into <a href="https://apps.who.int/nha/database">ten
@@ -759,8 +780,8 @@
     insurers, and national programs. Each stage’s revenue funds the next
     stage’s safety evidence, and millions of supervised visits are that
     evidence, the way supervised rides became the safety case for driverless
-    ones.<a href="#fn14" class="footnote-ref" id="fnref14"
-    role="doc-noteref"><sup>14</sup></a></p>
+    ones.<a href="#fn15" class="footnote-ref" id="fnref15"
+    role="doc-noteref"><sup>15</sup></a></p>
     <h2 id="five-years">Five years</h2>
     <p><strong>Robustness comes from iterating against reality, and this
     technology can iterate.</strong> Every failure in the record above was
@@ -901,8 +922,14 @@
     (lenacapavir)</a> · <a
     href="https://www.who.int/news-room/fact-sheets/detail/immunization-coverage">WHO
     immunization coverage (HPV)</a> · <a
-    href="https://www.cdc.gov/nchs/fastats/access-to-health-care.htm">NCHS
-    FastStats, usual source of care</a></p>
+    href="https://www.cdc.gov/nchs/products/databriefs/db558.htm">NCHS Data
+    Brief 558, usual source of care (2024)</a> · <a
+    href="https://www.kff.org/uninsured/key-facts-about-the-uninsured-population/">KFF, Key Facts about the
+    Uninsured</a> · <a
+    href="https://tcf.org/content/commentary/cbo-reaffirms-forecast-of-a-dramatic-reduction-in-health-coverage-in-2026-and-beyond/">CBO 2026 coverage
+    projections (TCF)</a> · <a
+    href="https://ccf.georgetown.edu/2025/08/14/new-cbo-health-coverage-estimates-of-budget-reconciliation-law/">CBO
+    reconciliation-law estimates (CCF)</a></p>
     <p><strong>Timelines.</strong> <a
     href="https://www.fda.gov/vaccines-blood-biologics/coronavirus-covid-19-cber-regulated-biologics/moderna-covid-19-vaccines">FDA,
     Moderna COVID-19 vaccine</a> · <a
@@ -1012,7 +1039,49 @@
       treatable columns enter the ten million. Mixed-cause diseases such as
       diabetes split between columns.<a href="#fnref2" class="footnote-back"
       role="doc-backlink">↩︎</a></p></li>
-      <li id="fn3"><p>Measurement needs a device, and only a device: engineers
+      <li id="fn3"><p>Arithmetic mine, anchors published. The baseline is
+      the <a href="https://www.cdc.gov/nchs/products/databriefs/db558.htm">2024 National Health Interview
+      Survey</a>: 9.7 percent of American adults have no usual source of
+      care, but the average conceals who they are —</p>
+      <table>
+      <thead><tr><th>Without a usual source of care, 2024</th><th></th></tr></thead>
+      <tbody>
+      <tr><td>All adults</td><td>9.7%</td></tr>
+      <tr><td>Men</td><td>12.9%</td></tr>
+      <tr><td>Women</td><td>6.7%</td></tr>
+      <tr><td>Ages 18–34</td><td>16.3%</td></tr>
+      <tr><td>Ages 35–49</td><td>11.9%</td></tr>
+      <tr><td>Ages 50–64</td><td>6.4%</td></tr>
+      <tr><td>65 and older</td><td>2.5%</td></tr>
+      </tbody>
+      </table>
+      <p>The doctorless are working-age men — the vignette’s subject twice
+      over. The projection: <a href="https://tcf.org/content/commentary/cbo-reaffirms-forecast-of-a-dramatic-reduction-in-health-coverage-in-2026-and-beyond/">CBO expects three to four million
+      more uninsured in 2026</a> as 2025’s coverage legislation lands, and
+      <a href="https://ccf.georgetown.edu/2025/08/14/new-cbo-health-coverage-estimates-of-budget-reconciliation-law/">roughly sixteen million by 2034</a>. Coverage converts
+      to care access at a published rate: <a href="https://www.kff.org/uninsured/key-facts-about-the-uninsured-population/">40.8 percent of
+      uninsured working-age adults lack a usual source of care against 8
+      percent of the insured</a>, so each million adults losing coverage
+      adds roughly a third of a million without one. Splitting coverage
+      losses evenly by sex:</p>
+      <table>
+      <thead><tr><th></th><th>More uninsured (CBO)</th><th>Men without a usual source</th><th>One in —</th></tr></thead>
+      <tbody>
+      <tr><td>2024</td><td>—</td><td>12.9%</td><td>8</td></tr>
+      <tr><td>2026</td><td>~3–4M</td><td>~13.4%</td><td>7.5</td></tr>
+      <tr><td>2034</td><td>~16M</td><td>~15%</td><td>6.7</td></tr>
+      </tbody>
+      </table>
+      <p>Two biases, pointing opposite ways: the newly uninsured may keep
+      a doctor for a while, which softens the near years; and the
+      projection counts only insurance, while the same legislation
+      defunds the clinics and rural hospitals that are the usual source
+      for many people who stay insured, which the table ignores entirely.
+      Call one in seven the central case. The direction is not in doubt —
+      the vignette’s subject is becoming more common, not less.<a
+      href="#fnref3" class="footnote-back"
+      role="doc-backlink">↩︎</a></p></li>
+      <li id="fn4"><p>Measurement needs a device, and only a device: engineers
       built automated cuffs for unskilled self-use, US and UK guidelines
       (USPSTF, NICE) now prefer confirming diagnosis with readings patients
       take themselves, and SPRINT’s protocol frequently used automated
@@ -1022,22 +1091,23 @@
       constraint is validated-device procurement and cuff sizing; cuffless
       phone-only measurement lacks clinical validation. Loop pricing: a
       validated cuff runs ~$20 for years of service; protocol drug regimens
-      cost a few dollars per patient-year at pooled generic prices; inference
+      cost a few dollars per patient-year at pooled global generic prices,
+      and about four dollars a month on US pharmacy generic lists; inference
       costs well under a dollar per consultation and falling. The vignette
       prices the destination: today a clinician signs the treatment start, and
       the staged path in the market section describes how certified protocol
-      scopes retire that signature.<a href="#fnref3" class="footnote-back"
+      scopes retire that signature.<a href="#fnref4" class="footnote-back"
       role="doc-backlink">↩︎</a></p></li>
-      <li id="fn4"><p>A 2017 individual-patient-data meta-analysis of
+      <li id="fn5"><p>A 2017 individual-patient-data meta-analysis of
       self-monitoring trials found home readings alone produced little or no
       blood pressure change; readings moved outcomes only when paired with
       co-interventions that acted on them, medication titration, follow-up,
       education. The loop failed to ship for a second reason as well: a
       pharmacy or living-room reading belongs to no one, so no record follows
       it and no one owns the number. Hardware without an acting layer measures
-      the disease and leaves it.<a href="#fnref4" class="footnote-back"
+      the disease and leaves it.<a href="#fnref5" class="footnote-back"
       role="doc-backlink">↩︎</a></p></li>
-      <li id="fn5"><p>The full cascade: 22.6% of Indian adults with
+      <li id="fn6"><p>The full cascade: 22.6% of Indian adults with
       hypertension went undiagnosed despite a facility visit within the year
       (realized, diagnosis rises 54.8→77.3%); the Philippines shows
       62.7→74.4%; even under India’s national screening program, ~40% of
@@ -1046,15 +1116,15 @@
       SPRINT, no intensification at 50–60% of above-target visits. ~45%
       non-adherence falls ~24% from single-pill combination alone; Kaiser
       44→80% by 2009 and ~90% since; US national control 54→44%; Canada ~65%;
-      world ~21%.<a href="#fnref5" class="footnote-back"
+      world ~21%.<a href="#fnref6" class="footnote-back"
       role="doc-backlink">↩︎</a></p></li>
-      <li id="fn6"><p>Zimbabwe’s Friendship Bench: 14% still depressed at six
+      <li id="fn7"><p>Zimbabwe’s Friendship Bench: 14% still depressed at six
       months versus 50% under usual care (n=573). Guided internet CBT matches
       face-to-face in meta-analysis. Engagement with fully automated therapy
       over months has no comparable evidence base, so machines take the
       supervised medication follow-up and measurement role in the near term.<a
-      href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-      <li id="fn7"><p>Exclusions and addressable share, mapping mine, anchors
+      href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+      <li id="fn8"><p>Exclusions and addressable share, mapping mine, anchors
       published. From the Commission’s condition table: cardiovascular disease
       is 33% of amenable deaths (2.82M; 84% among system users), neonatal
       conditions, TB, and road injuries together ~2.7M, amenable cancer 0.48M
@@ -1068,23 +1138,23 @@
       hypertension gap); TB succeeds in &gt;85% of found cases and drug
       resistance is ~4% of incidence, so the unfound carry no extra treatment
       difficulty. Bounds of 60–85% closable give ~5–7M addressable
-      deaths/yr.<a href="#fnref7" class="footnote-back"
+      deaths/yr.<a href="#fnref8" class="footnote-back"
       role="doc-backlink">↩︎</a></p></li>
-      <li id="fn8"><p>Cancer column: 9.7M deaths × ~14 remaining years, since
+      <li id="fn9"><p>Cancer column: 9.7M deaths × ~14 remaining years, since
       cancer deaths cluster near 70. This is generous to the cure side,
       because curing cancer means many staggered cures. Screen-detectable
       cancers also appear in the delivery column, so the two totals cannot be
-      added.<a href="#fnref8" class="footnote-back"
+      added.<a href="#fnref9" class="footnote-back"
       role="doc-backlink">↩︎</a></p></li>
-      <li id="fn9"><p>Delivery column: 5–7M addressable deaths × 25–30
+      <li id="fn10"><p>Delivery column: 5–7M addressable deaths × 25–30
       remaining years ≈ 125–210M; I quote 125–200M. Conservative cumulative
       check: 125M/yr from ~2027 accumulates ~3.0B healthy years by 2050 versus
       ~1.1B for 140M/yr from ~2042. Caveats cutting both ways: the two death
       counts use differing definitions; full coverage is an upper bound; both
       columns are conditional, cures on the science, delivery on reliability
-      being proven and adopted.<a href="#fnref9" class="footnote-back"
+      being proven and adopted.<a href="#fnref10" class="footnote-back"
       role="doc-backlink">↩︎</a></p></li>
-      <li id="fn10"><p>Chinese researchers posted the sequence on January 11,
+      <li id="fn11"><p>Chinese researchers posted the sequence on January 11,
       2020; Moderna finalized the design by January 13; the FDA authorized the
       vaccine that December. Melanoma: in CheckMate 067 (previously untreated,
       unresectable stage III/IV), ten-year overall survival was 43% on
@@ -1104,16 +1174,16 @@
       beyond cancer: the definitive Alzheimer’s prevention trial ran most of a
       decade and read out negative, and the FDA approved aducanumab on the
       amyloid surrogate in 2021 before Biogen discontinued it in 2024.<a
-      href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-      <li id="fn11"><p>While this is excellent research I left Google
+      href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+      <li id="fn12"><p>While this is excellent research I left Google
       because I did not see a path by which Google will deploy this
       technology at scale within the next 5 years. Deploying this
       technology will require having clinicians get hands on with agents
       and learning to trust them enough to delegate longer running tasks,
       and I believe Anthropic is better positioned to enable this key
-      step.<a href="#fnref11" class="footnote-back"
+      step.<a href="#fnref12" class="footnote-back"
       role="doc-backlink">↩︎</a></p></li>
-      <li id="fn12"><p>AMIE’s examinations used trained actors presenting
+      <li id="fn13"><p>AMIE’s examinations used trained actors presenting
       clean cases, which establishes trainability of history-taking and
       management and leaves robustness to real users unproven. ResidencyRL’s
       reward structure targets the three documented failure modes by
@@ -1122,14 +1192,14 @@
       against the elicitation gap. The Included Health trial, following a
       feasibility study whose primary safety measure was supervisor
       interruptions, is the first prospective test of transfer.<a
-      href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-      <li id="fn13"><p>Babylon Health, a UK company, claimed its AI triaged as
+      href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+      <li id="fn14"><p>Babylon Health, a UK company, claimed its AI triaged as
       well as British GPs, ran the “GP at Hand” practice inside the NHS, and
       operated Rwanda’s flagship subsidized digital-health service covering
       millions of people. It went bankrupt in 2023 and left the Rwandan
-      deployment stranded mid-contract.<a href="#fnref13"
+      deployment stranded mid-contract.<a href="#fnref14"
       class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-      <li id="fn14"><p>Stage gates: the gate on supervised visits is how many
+      <li id="fn15"><p>Stage gates: the gate on supervised visits is how many
       AI consultations one clinician can safely approve per hour; autonomy’s
       gate is scope-by-scope proof plus a risk holder, sandbox, then statute,
       then malpractice insurers able to price it, because once an actuary can
@@ -1137,7 +1207,7 @@
       illustrative price points, sized against Hims-style subscriptions and
       Farmacias Similares’ cash floor. Systems paid per visit lose money on
       prevented visits, which is why fee-for-service networks resist
-      longest.<a href="#fnref14" class="footnote-back"
+      longest.<a href="#fnref15" class="footnote-back"
       role="doc-backlink">↩︎</a></p></li>
     </ol>
   </section>
