@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diego Ardila — The Simple Cure</title>
+<meta name="description" content="Why scaling the standard of care is the simple thing that works for human health.">
+<link rel="canonical" href="https://ardila.github.io/the-simple-cure/">
+<meta property="og:url" content="https://ardila.github.io/the-simple-cure/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Simple Cure">
+<meta property="og:description" content="Why scaling the standard of care is the simple thing that works for human health.">
+<meta property="og:site_name" content="Diego Ardila">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Simple Cure">
+<meta name="twitter:description" content="Why scaling the standard of care is the simple thing that works for human health.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1FA7A;</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&display=swap">
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem("theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+</script>
+<style>
+  :root {
+    --ivory-light: #faf9f5;
+    --ivory-medium: #f0eee6;
+    --ivory-dark: #e8e6dc;
+    --cloud-light: #d1cfc5;
+    --cloud-medium: #b0aea5;
+    --cloud-dark: #87867f;
+    --slate-light: #5e5d59;
+    --slate-medium: #3d3d3a;
+    --slate-dark: #1f1e1d;
+
+    --bg: var(--ivory-medium);
+    --bg-raised: var(--ivory-light);
+    --text: var(--slate-dark);
+    --text-secondary: var(--slate-light);
+    --border: var(--cloud-light);
+    --link-hover: var(--slate-light);
+    --chip: rgba(31, 30, 29, 0.08);
+    --chip-hover: rgba(31, 30, 29, 0.16);
+    --shadow: 0 8px 32px rgba(31, 30, 29, 0.14);
+
+    --serif: "Newsreader", "Times New Roman", Times, serif;
+    --measure: 38.75rem;
+    --headerH: 3.75rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: var(--slate-dark);
+      --bg-raised: #2e2d2b;
+      --text: #e1dfd8;
+      --text-secondary: var(--cloud-dark);
+      --border: var(--slate-medium);
+      --link-hover: var(--cloud-medium);
+      --chip: rgba(240, 238, 230, 0.15);
+      --chip-hover: rgba(240, 238, 230, 0.28);
+      --shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: var(--slate-dark);
+    --bg-raised: #2e2d2b;
+    --text: #e1dfd8;
+    --text-secondary: var(--cloud-dark);
+    --border: var(--slate-medium);
+    --link-hover: var(--cloud-medium);
+    --chip: rgba(240, 238, 230, 0.15);
+    --chip-hover: rgba(240, 238, 230, 0.28);
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  }
+
+  * { box-sizing: border-box; }
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    background: var(--bg);
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    line-height: 1.6;
+    font-optical-sizing: auto;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .container {
+    width: 100%;
+    max-width: var(--measure);
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+
+  /* ---------- header ---------- */
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: var(--bg-raised);
+    border-bottom: 1px solid var(--border);
+    height: var(--headerH);
+  }
+  .header-inner {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+  .header-name {
+    font-size: 1.375rem;
+    font-weight: 600;
+    line-height: 1;
+    margin: 0;
+  }
+  .header-name a { color: inherit; text-decoration: none; }
+  .header-name a:hover { color: var(--link-hover); }
+  .header-tag {
+    position: absolute;
+    right: 3.25rem;
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .header-tag:hover { color: var(--text); }
+
+  .icon-btn {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    border: 0;
+    border-radius: 0.25rem;
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+  }
+  .icon-btn:hover { background: var(--chip); }
+  .icon-btn svg { width: 1.25rem; height: 1.25rem; display: block; }
+  .toc-toggle { left: 1rem; }
+  .theme-toggle { right: 1rem; }
+  .toc-toggle .icon-close, .toc-toggle[aria-expanded="true"] .icon-open { display: none; }
+  .toc-toggle[aria-expanded="true"] .icon-close { display: block; }
+  :root[data-theme="dark"] .icon-sun, .theme-toggle .icon-moon { display: none; }
+  :root[data-theme="dark"] .icon-moon { display: block; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .icon-sun { display: none; }
+    :root:not([data-theme="light"]) .icon-moon { display: block; }
+  }
+
+  /* ---------- contents sidebar ---------- */
+  .toc {
+    position: fixed;
+    top: var(--headerH);
+    left: 0;
+    bottom: 0;
+    z-index: 30;
+    width: 17rem;
+    padding: 2.25rem 1.5rem 3rem;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background: var(--bg);
+    border-right: 1px solid var(--border);
+    transform: translateX(-100%);
+    visibility: hidden;
+    transition: transform 0.22s ease, visibility 0.22s;
+  }
+  .toc.is-open { transform: translateX(0); visibility: visible; }
+  @media (prefers-reduced-motion: reduce) { .toc { transition: none; } }
+  .toc-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin: 0 0 1rem;
+  }
+  .toc ol { list-style: none; margin: 0; padding: 0; counter-reset: toc; }
+  .toc li { margin-bottom: 0.5rem; }
+  .toc a {
+    display: block;
+    font-size: 1.0625rem;
+    line-height: 1.4;
+    color: var(--text-secondary);
+    text-decoration: none;
+  }
+  .toc a:hover, .toc a.is-current { color: var(--text); }
+  .toc-scrim {
+    position: fixed;
+    inset: var(--headerH) 0 0;
+    z-index: 25;
+    background: rgba(31, 30, 29, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.22s ease, visibility 0.22s;
+  }
+  .toc-scrim.is-open { opacity: 1; visibility: visible; }
+  @media (min-width: 78rem) {
+    .toc { border-right: none; background: transparent; }
+    .toc-scrim { display: none; }
+  }
+
+  /* ---------- title block ---------- */
+  .titleblock { padding-top: 2.25rem; }
+  .post-title {
+    font-size: clamp(2.625rem, 9vw, 3.875rem);
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.4rem;
+  }
+  .post-subtitle {
+    font-size: 1.375rem;
+    line-height: 1.6;
+    font-style: italic;
+    margin: 0;
+  }
+  .post-byline {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin: 2.25rem 0 1.125rem;
+  }
+  .post-byline a { color: inherit; }
+
+  /* ---------- article ---------- */
+  article h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+    font-weight: 600;
+    margin: 2.75rem 0 1rem;
+    scroll-margin-top: calc(var(--headerH) + 1.5rem);
+  }
+  article p { margin: 0 0 1.25rem; }
+  article ol, article ul { margin: 0 0 1.5rem; padding-left: 1.5rem; }
+  article li { margin-bottom: 0.75rem; }
+  article li::marker { color: var(--text-secondary); }
+  article strong { font-weight: 600; }
+  article em { font-style: italic; }
+
+  a { color: var(--text); }
+  article a, .footnotes a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-thickness: 1.6px;
+    text-underline-offset: 2px;
+    text-decoration-color: currentColor;
+    transition: color 0.12s ease, text-decoration-color 0.12s ease;
+  }
+  article a:hover, .footnotes a:hover { color: var(--link-hover); }
+  /* the Sources dump is nearly all links; keep its rules quiet */
+  #sources ~ p a { text-decoration-color: var(--border); }
+  #sources ~ p a:hover { text-decoration-color: currentColor; }
+
+  /* ---------- footnotes ---------- */
+  sup { line-height: 0; }
+  a.footnote-ref {
+    display: inline-block;
+    padding: 0 3px;
+    border-radius: 3px;
+    background: var(--chip);
+    font-size: 0.68em;
+    font-weight: 500;
+    line-height: 1.5;
+    vertical-align: super;
+    color: inherit;
+    text-decoration: none;
+  }
+  a.footnote-ref:hover, a.footnote-ref:focus-visible { background: var(--chip-hover); }
+  a.footnote-ref sup { line-height: inherit; vertical-align: baseline; }
+
+  .dinkus {
+    border: 0;
+    margin: 3rem 0;
+    color: var(--text-secondary);
+    text-align: center;
+  }
+  .dinkus::before {
+    content: "* * *";
+    letter-spacing: 0.5em;
+    font-size: 1rem;
+  }
+
+  .footnotes h2 { font-size: 1.5rem; margin-bottom: 1.5rem; }
+  .footnotes ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    font-size: 1.0625rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+  }
+  .footnotes li { margin-bottom: 1.25rem; scroll-margin-top: calc(var(--headerH) + 1.5rem); }
+  .footnotes li::marker { color: var(--cloud-dark); }
+  .footnotes li p { margin: 0; }
+  .footnotes a { text-decoration-color: var(--cloud-dark); }
+  a.footnote-back { text-decoration: none; margin-left: 0.25rem; }
+
+  .fn-tooltip {
+    position: absolute;
+    z-index: 60;
+    max-width: min(24rem, calc(100vw - 2rem));
+    padding: 0.875rem 1rem;
+    background: var(--bg-raised);
+    border: 1px solid var(--border);
+    border-radius: 0.375rem;
+    box-shadow: var(--shadow);
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.14s ease, visibility 0.14s;
+  }
+  .fn-tooltip.is-visible { opacity: 1; visibility: visible; }
+  .fn-tooltip .footnote-back { display: none; }
+  @media (hover: none) { .fn-tooltip { display: none; } }
+
+  /* ---------- footer ---------- */
+  .endmatter {
+    margin-top: 3.5rem;
+    padding: 1.5rem 0 4rem;
+    border-top: 1px solid var(--border);
+    font-size: 1rem;
+    color: var(--text-secondary);
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .endmatter a { color: inherit; text-decoration: none; }
+  .endmatter a:hover { color: var(--text); }
+
+  :focus-visible { outline: 2px solid var(--link-hover); outline-offset: 2px; }
+
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 100;
+    padding: 0.5rem 1rem;
+    background: var(--bg-raised);
+    border: 1px solid var(--border);
+  }
+  .skip-link:focus { left: 0.5rem; top: 0.5rem; }
+
+  @media (max-width: 40rem) {
+    body { font-size: 1.1875rem; }
+    article h2 { font-size: 1.75rem; }
+    .post-subtitle { font-size: 1.1875rem; }
+    .header-tag { display: none; }
+  }
+
+  @media print {
+    .header, .toc, .toc-scrim, .fn-tooltip, .endmatter { display: none !important; }
+    body { background: #fff; color: #000; font-size: 11pt; }
+    .container { max-width: none; }
+    article a { text-decoration: none; }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="header">
+  <div class="header-inner">
+    <button class="icon-btn toc-toggle" type="button" aria-expanded="false" aria-controls="toc" aria-label="Toggle contents">
+      <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <p class="header-name"><a href="./">Diego Ardila</a></p>
+    <a class="header-tag" href="https://scholar.google.com/citations?user=ScPCEy0AAAAJ">Scholar</a>
+    <button class="icon-btn theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="toc-scrim" hidden></div>
+
+<nav class="toc" id="toc" aria-label="Contents">
+  <p class="toc-title">Contents</p>
+  <ol>
+    <li><a href="#the-bar">The bar</a></li>
+    <li><a href="#a-second-cancer">A second cancer</a></li>
+    <li><a href="#what-the-gap-is-made-of-clinical-judgment">What the gap is made of: clinical judgment</a></li>
+    <li><a href="#the-arithmetic-scaling-the-standard-curing-cancer">The arithmetic: scaling the standard &gt; curing cancer</a></li>
+    <li><a href="#why-it-hasnt-happened-yet">Why it hasn’t happened yet</a></li>
+    <li><a href="#why-it-pays-for-itself">Why it pays for itself</a></li>
+    <li><a href="#five-years">Five years</a></li>
+    <li><a href="#sources">Sources</a></li>
+    <li><a href="#footnotes">Footnotes</a></li>
+  </ol>
+</nav>
+
+<main class="container" id="main">
+  <div class="titleblock">
+    <h1 class="post-title">The Simple Cure</h1>
+    <p class="post-subtitle">Why scaling the standard of care is the simple thing that works for human health</p>
+    <p class="post-byline">Diego Ardila&nbsp; ·&nbsp; August 2026</p>
+  </div>
+
+  <article>
+    <h2 id="the-bar">The bar</h2>
+    <p>Two weeks ago, Dario <a
+    href="https://x.com/DarioAmodei/status/2088758819304443967">conceded in
+    public</a> that the most accurate criticism of AI companies, Anthropic
+    included, is that they <a
+    href="https://thenextweb.com/news/dario-amodei-ai-public-trust-cure-cancer-ipo">“haven’t
+    yet delivered on our big promises to benefit the world.”</a> Promising
+    that AI will cure cancer, he added, now reads as a cliché, and a
+    deceptive one. Then he set the bar in one sentence: <a
+    href="https://bravenewcoin.com/insights/dario-amodeis-unusually-personal-case-for-ai">“The
+    thing that will work is actually curing cancer.”</a> And he set the
+    clock: Anthropic is ramping up in biology and medicine, aiming for <a
+    href="https://x.com/DarioAmodei/status/2088758819304443967">“incredible
+    results in the coming years and some early glimmers in the coming
+    months.”</a></p>
+    <p>I agree with the bar and the clock. This is an argument about the
+    deliverable. There is a disease the size of cancer that AI can begin
+    curing at scale within five years, and the cure is delivery: getting the
+    standard of care, medicine’s written playbook of what already works, to
+    everyone. Four steps:</p>
+    <ol type="1">
+    <li><strong>Ten million people a year, one in six of all deaths, die of
+    conditions medicine already knows how to treat.</strong></li>
+    <li><strong>What’s missing is usually the judgment, someone to figure
+    out what’s wrong and what to do. The treatments are mostly cheap, and
+    sometimes already bought.</strong></li>
+    <li><strong>AI can supply that judgment, but today’s models fail against
+    real users. Closing that gap is a research problem, and it is closing
+    fast.</strong></li>
+    <li><strong>A frontier lab can compress this into five years, and the
+    push funds itself: health care is a ten-trillion-dollar sector already
+    paying for judgment at every level.</strong></li>
+    </ol>
+    <p>New cures matter. They are the slower, less certain path.</p>
+    <h2 id="a-second-cancer">A second cancer</h2>
+    <p>In the United States, diagnostic error kills or permanently disables
+    roughly <a href="https://doi.org/10.1136/bmjqs-2021-014130">795,000
+    people a year</a>. Worldwide, about <a
+    href="https://doi.org/10.1016/S0140-6736%2818%2931668-4">8.6 million
+    people</a> die annually in low- and middle-income countries of
+    conditions health care can treat, and more than <a
+    href="https://www.oecd.org/en/publications/2023/11/health-at-a-glance-2023_e04f8239/full-report/avoidable-mortality-preventable-and-treatable_e7407977.html">a
+    million more</a> across the rich OECD countries. Call it ten million
+    deaths a year: one in six of all deaths on earth.<a href="#fn1"
+    class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> For
+    scale, cancer, every type combined, kills <a
+    href="https://doi.org/10.3322/caac.21834">9.7 million</a>. The treatment
+    gap is a second cancer. The difference is that every death inside it
+    already has a known treatment.</p>
+    <p>Most of this disease sits inside health systems: of the 8.6 million,
+    five million reached care that failed them, and 3.6 million never got
+    care. Bad care kills more people than no care.</p>
+    <p>America, which pays more for medical judgment than any society in
+    history, has the <a
+    href="https://www.oecd.org/en/publications/2023/11/health-at-a-glance-2023_e04f8239/full-report/avoidable-mortality-preventable-and-treatable_e7407977.html">worst
+    treatable-death rate in the rich world</a>, 98 per 100,000 against 39 in
+    Switzerland. Whatever the fix is, America will be one of its biggest
+    customers. The pattern repeats everywhere: of <a
+    href="https://doi.org/10.1016/S0140-6736%2821%2901330-1">1.28 billion
+    adults with high blood pressure</a>, the world’s leading risk factor for
+    death, one in five is controlled. Of 10.8 million people who developed
+    tuberculosis in 2023, <a
+    href="https://www.who.int/teams/global-tuberculosis-programme/tb-reports/global-tuberculosis-report-2024">2.7
+    million were never diagnosed</a>. Most depression, in every income band,
+    goes <a
+    href="https://doi.org/10.1371/journal.pmed.1003901">untreated</a>.</p>
+    <h2 id="what-the-gap-is-made-of-clinical-judgment">What the gap is made
+    of: clinical judgment</h2>
+    <p>The reflex answer is behavior: people eat badly, skip pills, and no
+    algorithm fixes that. The ten million already exclude those deaths. The
+    papers cited above split avoidable deaths into two columns, preventable
+    through behavior and public health versus treatable once disease exists,
+    and only the treatable column enters the count.<a href="#fn2"
+    class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> The
+    ten million are people who already had a disease and did not get
+    treated, or not enough to control it.</p>
+    <p>So walk through the biggest killer. Here is the cured version of high
+    blood pressure, priced. A 47-year-old motorcycle courier in Nairobi
+    manages his health the way everyone will: through an agent on his phone.
+    The agent knows he is 47 and has never once measured his blood pressure,
+    so it asks him to fix that at any pharmacy counter, where a one-minute
+    automatic cuff sits, a device built so that an untrained person gets a
+    clinical-grade reading.<a href="#fn3" class="footnote-ref" id="fnref3"
+    role="doc-noteref"><sup>3</sup></a> 168 over 104. The agent runs the
+    standard week of morning and evening confirmation readings, the numbers
+    hold, and it starts him on the national protocol’s single daily generic
+    pill. Then a monthly check-in, a nudge when the refill lapses, a dose
+    change when the numbers drift. His stroke never happens. Price the loop:
+    the cuff costs a fraction of a cent per reading, the computation
+    pennies, and no human time appears anywhere in it. The most expensive
+    component in curing the world’s biggest killer, per patient per year, is
+    the pill, and the pill costs a few dollars.</p>
+    <p>The hardware half of that loop shipped decades ago. Automatic cuffs
+    sell in the hundreds of millions and sit in pharmacies and living rooms
+    on every continent, and they changed little, because a reading alone
+    treats nobody. Someone must prompt the symptomless, confirm the number,
+    start the drug, and chase the refill; <a
+    href="https://doi.org/10.1371/journal.pmed.1002389">trials of
+    self-monitoring show blood pressure barely moves unless something acts
+    on the readings</a>.<a href="#fn4" class="footnote-ref" id="fnref4"
+    role="doc-noteref"><sup>4</sup></a> That acting layer ran on clinician
+    time, and clinician time costs more than this market bears. The device
+    diffused. The judgment stayed expensive.</p>
+    <p>Forty-six percent of hypertensives worldwide remain undiagnosed, with
+    cuffs in reach the whole time: in India, <a
+    href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8722631/">measuring only
+    the people already in the waiting room</a> would lift national diagnosis
+    from 55 to 77 percent. Diagnosed patients fare little better: American
+    doctors <a
+    href="https://www.ahajournals.org/doi/10.1161/01.hyp.0000200702.76436.4b">changed
+    the medication at 13 percent of visits</a> where pressure ran above
+    target, and fixing that habit alone would have lifted control from 46 to
+    66 percent. Meanwhile <a
+    href="https://doi.org/10.1001/jama.2013.108769">Kaiser reached 90
+    percent control</a> with decades-old generics, registries, and
+    non-physician follow-up, while <a
+    href="https://doi.org/10.1001/jama.2020.14545">US control fell to 44</a>
+    and <a href="https://doi.org/10.1503/cmaj.101767">Canada, a whole
+    country, hit 65</a> against a world average of 21.<a href="#fn5"
+    class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>
+    Same population, same biology. The variable is the system supplying
+    judgment and follow-through.</p>
+    <p>Tuberculosis makes the point brutally: the treatment is already
+    bought. National programs provide the <a
+    href="https://www.stoptb.org/global-drug-facility-gdf/gdf-product-catalog">forty-five-dollar
+    drug course</a> free at the point of care, and the <a
+    href="https://msfaccess.org/cepheid-danaher-reduces-price-tb-test-20-following-global-campaign">rapid
+    test costs eight</a>. The 2.7 million missed cases spent months as a
+    cough nobody decided to test. Everything in the chain is paid for except
+    the decision to start it. Childhood pneumonia kills <a
+    href="https://data.unicef.org/topic/child-health/pneumonia/">700,000
+    children a year</a> against an antibiotic course under fifty cents; the
+    missing piece is someone at 2 a.m. who knows a breathing rate is
+    dangerous. Depression is harder, and no pill fixes it: the scarce input
+    is trained human time, and the proven substitutes are <a
+    href="https://doi.org/10.1001/jama.2016.19102">lay counselors</a> and <a
+    href="https://doi.org/10.1080/16506073.2017.1401115">clinician-guided
+    digital therapy</a>; whether people stay engaged with fully automated
+    therapy is unproven, and the near-term machine role is the follow-up and
+    measurement that today never happens.<a href="#fn6" class="footnote-ref"
+    id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
+    <p>One limit. Some deaths need physical things: operating rooms, oxygen,
+    dialysis, blood. <a
+    href="https://doi.org/10.1016/S0140-6736%2815%2960160-X">Five billion
+    people lack safe surgery</a>, and no consultation fixes that; mapping
+    the published cause tables, I exclude roughly a fifth to a quarter of
+    the ten million.<a href="#fn7" class="footnote-ref" id="fnref7"
+    role="doc-noteref"><sup>7</sup></a></p>
+    <p>Won’t better molecules fix delivery instead? They keep arriving, and
+    they keep proving the point. The <a
+    href="https://doi.org/10.1056/NEJMoa2407001">twice-yearly HIV shot</a>
+    deleted adherence by chemistry, 100 percent efficacy in its pivotal
+    trial, and the story since has been price and access. The HPV vaccine, a
+    delivery-proof cancer cure, has reached <a
+    href="https://www.who.int/news-room/fact-sheets/detail/immunization-coverage">27
+    percent of the world’s girls</a> in eighteen years. Chemistry removes
+    the need to remember a pill. Someone still has to find you, judge you
+    eligible, and start you, and <a
+    href="https://www.cdc.gov/nchs/fastats/access-to-health-care.htm">one
+    American adult in eight</a> has no usual source of care. The gap is made
+    of judgment.</p>
+    <h2 id="the-arithmetic-scaling-the-standard-curing-cancer">The
+    arithmetic: scaling the standard &gt; curing cancer</h2>
+    <p>Curing cancer entirely is worth about 140 million healthy years of
+    life per year,<a href="#fn8" class="footnote-ref" id="fnref8"
+    role="doc-noteref"><sup>8</sup></a> arriving in the 2040s at the
+    earliest, conditional on the science. Delivering existing medicine to
+    everyone is worth roughly 125 to 200 million healthy years per year,
+    starting now.<a href="#fn9" class="footnote-ref" id="fnref9"
+    role="doc-noteref"><sup>9</sup></a> The two are comparable on annual
+    flow, with delivery likely larger, because these deaths come decades
+    younger: pneumonia at two, TB at forty, stroke in the fifties. The
+    decisive difference is timing. A fifteen-year head start makes delivery
+    roughly threefold larger in accumulated healthy years through 2050 at my
+    most conservative estimate.</p>
+    <p>Is “2040s at the earliest” fair? Moderna designed its vaccine within
+    two days of seeing the viral sequence, and <a
+    href="https://www.fda.gov/vaccines-blood-biologics/coronavirus-covid-19-cber-regulated-biologics/moderna-covid-19-vaccines">authorization
+    took eleven months</a> of trials, manufacturing, and review under
+    wartime urgency. That pace depended on the disease: COVID killed in
+    weeks, so a trial could prove the vaccine worked in weeks. Cancer offers
+    no such speed. Late-stage cancer is the hardest version of the problem,
+    because by the time a tumor has spread it has evolved into many
+    genetically distinct diseases inside one patient, and each round of
+    treatment breeds the clones that resist it. AI may eventually design
+    therapies that outrun that evolution, and immunotherapy already
+    sometimes does. Its best case is melanoma: <a
+    href="https://doi.org/10.1056/NEJMoa2407417">four in ten people with
+    metastatic disease now live past ten years</a>, most long off treatment,
+    effectively cured. But melanoma is a special target. Years of UV damage
+    mutate its cells until <a
+    href="https://doi.org/10.1056/NEJMc1713444">the immune system can see
+    them as foreign</a>; the drugs only release the brakes. The tumors that
+    do most of the killing offer no such target, and even the best case
+    leaves six in ten dead. So the realistic path to a world with little
+    cancer runs through prevention, screening, and treating early disease,
+    and those trials are slow for a simple reason: proving you prevented
+    deaths means waiting years for deaths to not happen. The HPV vaccine won
+    approval in 2006 and <a
+    href="https://doi.org/10.1056/NEJMoa1917338">proved it prevents invasive
+    cancer in 2020</a>. The definitive <a
+    href="https://doi.org/10.1056/NEJMoa1102873">lung-screening trial took a
+    decade</a>. The <a
+    href="https://doi.org/10.1016/S0140-6736%2821%2900731-5">ovarian one ran
+    twenty years, caught disease earlier, and saved no one</a>. Add that <a
+    href="https://doi.org/10.1038/nrd3681">drug R&amp;D productivity halved
+    every nine years for six decades</a> and that <a
+    href="https://doi.org/10.1038/s43587-024-00702-3">life-expectancy gains
+    are decelerating</a>.<a href="#fn10" class="footnote-ref" id="fnref10"
+    role="doc-noteref"><sup>10</sup></a> The long bets are still worth
+    making. These numbers say when they pay.</p>
+    <p>And when the slow trials succeed, the winners join the queue behind
+    the same bottleneck. Lung screening proved it saves lives in 2011.
+    Fifteen years later, <a
+    href="https://journal.chestnet.org/article/S0012-3692%2824%2900654-8/abstract">fewer
+    than one eligible American in five has been screened</a>, and the
+    obstacle the field itself names is <a
+    href="https://www.ahdbonline.com/online-first/3148-concerns-related-to-benefits-and-harms-of-real-world-shared-decision-making-for-lung-cancer-screening">a
+    required counseling conversation that clinicians have no time to
+    hold</a>. The strongest predictor of whether a teenager gets the HPV
+    vaccine is <a
+    href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8568647/">whether a
+    clinician recommends it</a>. Even the cures we already own wait on
+    twenty minutes of judgment. Curing cancer, down its realistic path, ends
+    as a delivery problem.</p>
+    <p>We have run this experiment. Effective HIV therapy existed in 1996;
+    more than ten million Africans died before <a
+    href="https://www.kff.org/global-health-policy/fact-sheet/the-u-s-presidents-emergency-plan-for-aids-relief-pepfar/">PEPFAR</a>,
+    America’s AIDS treatment program, arrived in 2003. The molecule was
+    seven years old when the delivery showed up, and the delivery was the
+    cure. We are in 1996 again. The undelivered technology is the
+    consultation itself.</p>
+    <h2 id="why-it-hasnt-happened-yet">Why it hasn’t happened yet</h2>
+    <p>Because today’s medical AI consists of capable copilots that cannot
+    yet be trusted alone, and the world’s refusal to deploy them reads the
+    evidence correctly. The first AI legally allowed to prescribe in
+    America, in a <a
+    href="https://commerce.utah.gov/2026/01/06/news-release-utah-and-doctronic-announce-groundbreaking-partnership-for-ai-prescription-medication-renewals/">Utah
+    sandbox</a>, may only renew 192 listed medications, with a physician
+    reviewing its first 250 renewals. That permission measures how much
+    autonomy current evidence supports.</p>
+    <p>The field keeps running a credibility-spending cycle: benchmark
+    claim, consumer launch, independent failure report. <a
+    href="https://arxiv.org/abs/2505.08775">HealthBench</a> scores climbed
+    16, 32, 60 percent across model generations until physicians could no
+    longer improve the drafts, with the paper’s own caveat that the chat
+    format might favor models. The coverage kept the claim and dropped the
+    caveat: <a
+    href="https://the-decoder.com/openai-says-its-latest-models-outperform-doctors-in-medical-benchmark/">“OpenAI
+    says its latest models outperform doctors in medical benchmark.”</a> A
+    <a
+    href="https://arstechnica.com/ai/2026/01/chatgpt-health-lets-you-connect-medical-records-to-an-ai-that-makes-things-up/">consumer
+    health product shipped</a>. Then the independent record arrived, third
+    verse after <a
+    href="https://www.statnews.com/2017/09/05/watson-ibm-cancer/">Watson</a>
+    and <a href="https://en.wikipedia.org/wiki/Babylon_Health">Babylon</a>.
+    This is field-wide: on <a
+    href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12896728/">forty
+    eye-emergency vignettes</a>, GPT-5, Gemini 2.5 Pro, and Claude Opus 4.1
+    all averaged about 7 of 10, statistically indistinguishable and a long
+    way from reliable. Every debunked claim raises the bar for the next
+    entrant, whoever it is.</p>
+    <p>The record is precise: models fail against real users while knowing
+    the answers. In a <a
+    href="https://www.nature.com/articles/s41591-025-04074-y">preregistered
+    trial with 1,298 participants</a>, models alone identified the condition
+    94.9 percent of the time; the same models in real users’ hands, under
+    34.5 percent, matching a control group left to their own devices,
+    because people give incomplete, muddled information and the models
+    answer anyway. The first <a
+    href="https://www.newswise.com/articles/research-identifies-blind-spots-in-ai-medical-triage">independent
+    safety evaluation</a> of the consumer product found it missed medically
+    necessary hospital referrals in over half of relevant cases, worst when
+    patients downplayed symptoms or mentioned no insurance. Under pushback,
+    <a href="https://www.nature.com/articles/s41746-025-01684-1">models
+    initially complied with 100 percent of illogical
+    medication-misinformation requests</a>. The head of OpenAI’s own
+    physician network <a
+    href="https://www.forbes.com/sites/amyfeldman/2026/07/07/how-openai-plans-to-win-over-doctors-patients-and-hospitals/">put
+    it plainly</a>: “Frankly, it wasn’t that hard to get it to mess up.”</p>
+    <p>Robustness responds to training. <a
+    href="https://doi.org/10.1038/s41586-025-08866-7">AMIE</a>, trained for
+    the consultation, beat primary-care physicians on 28 of 32
+    examiner-rated axes, though against trained actors with clean cases. <a
+    href="https://arxiv.org/abs/2608.07418">ResidencyRL</a> showed that
+    reinforcement learning against adversarial simulated patients,
+    sixty-turn encounters with safety-constrained rewards, improves frontier
+    models on exactly the failing axes, and <a
+    href="https://research.google/blog/collaborating-on-a-nationwide-randomized-study-of-ai-in-real-world-virtual-care/">Google
+    has announced a nationwide randomized trial of the ResidencyRL-trained
+    model in real virtual care</a>. The open question is whether
+    simulation-trained skills survive real patients; the 94.9-to-34.5
+    collapse is the warning, and that trial is the first direct test.<a
+    href="#fn11" class="footnote-ref" id="fnref11"
+    role="doc-noteref"><sup>11</sup></a> The failures blocking delivery are
+    training problems inside a loop a frontier lab controls end to end. The
+    bottlenecks on discovery, cell cultures and years-long trial endpoints,
+    sit outside any training loop ever built. “Closing fast” is credible for
+    exactly one of the two.</p>
+    <h2 id="why-it-pays-for-itself">Why it pays for itself</h2>
+    <p>Charities die on schedule. <a
+    href="https://www.kff.org/global-health-policy/fact-sheet/the-u-s-presidents-emergency-plan-for-aids-relief-pepfar/">PEPFAR
+    saved 25 million lives</a> and a stop-work order halted it overnight.
+    Babylon’s subsidized flagship went bankrupt mid-contract.<a href="#fn12"
+    class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a>
+    The mobile phone reached everyone because someone profited at every
+    handoff. Sustainability is a moral property of a system.</p>
+    <p>This one sells into <a href="https://apps.who.int/nha/database">ten
+    trillion dollars a year</a> already moving, and at the primary-care
+    layer the product is judgment, sold in fifteen-minute units by the most
+    expensive labor on earth. The buyers exist. <a
+    href="https://www.who.int/publications/i/item/9789240080379">Two billion
+    people</a> face financial hardship paying cash for care, and cash-pay
+    medicine is a proven <a href="https://investors.hims.com/">$1.5 billion
+    a year US business</a> in narrow categories. Per-member insurers profit
+    from every avoided <a href="https://healthcostinstitute.org/">$2,000 ER
+    visit</a> and <a
+    href="https://www.heart.org/en/about-us/heart-and-stroke-association-statistics">six-figure
+    stroke</a>. Health systems buy clinician time back: <a
+    href="https://www.abridge.com/blog/series-e">$117 million in contracted
+    notes revenue</a>, an <a
+    href="https://www.cnbc.com/2026/01/21/openevidence-chatgpt-for-doctors-doubles-valuation-to-12-billion.html">ad-funded
+    reference tool claiming 40 percent of US physicians</a>, both monetizing
+    the layer beside the visit while the visit itself remains unsold. And
+    pharmacies sell the visit to sell the pills: the clinics beside Mexico’s
+    Farmacias Similares logged <a
+    href="https://elceo.com/investigaciones-especiales/farmacias-similares-las-atipicas-donaciones-detras-de-las-fundaciones-de-dr-simi/">163
+    million consultations in 2024</a>, 67 million more than the national
+    social-security system, at two to three dollars each. Who won’t buy:
+    anyone paid per visit, which predicts the adoption map.</p>
+    <p>The market unlocks in stages, and reliability gates each one. Tools
+    that speed clinicians: shipped. Supervised visits, where AI runs the
+    consultation and a clinician approves: shipping, legal in most states.
+    Narrow autonomy: cracking open, renewals first. An office visit bills
+    $150 to $300; the computation behind an AI consultation costs under a
+    dollar. That hundredfold gap is division on public prices, and it is
+    where twenty dollars a month in Ohio and fifty cents a consult in
+    Nairobi both work. Then the consultation as a service, into pharmacies,
+    insurers, and national programs. Each stage’s revenue funds the next
+    stage’s safety evidence, and millions of supervised visits are that
+    evidence, the way supervised rides became the safety case for driverless
+    ones.<a href="#fn13" class="footnote-ref" id="fnref13"
+    role="doc-noteref"><sup>13</sup></a></p>
+    <h2 id="five-years">Five years</h2>
+    <p><strong>Robustness comes from iterating against reality, and this
+    technology can iterate.</strong> Every failure in the record above was
+    invisible until real users hit it, and each one names its own training
+    signal: the muddled history, the downplayed symptom, the confident
+    answer that should have been a question. Drug development touches
+    reality once per molecule; the compound is sealed the day the trial
+    opens, and whatever it fails to do, it fails forever. A model that fails
+    on Tuesday retrains on Friday. The supervised tier is what makes that
+    loop safe to run at scale: the AI conducts the visit, a clinician
+    approves or corrects, and every correction is labeled data from exactly
+    the encounters where today’s models break. Deploy, fail under
+    supervision, retrain, redeploy, at model-release cadence. The lab that
+    wires deployment into training compounds fastest.</p>
+    <p><strong>The bottleneck capability is the one Anthropic has studied
+    longest.</strong> The documented failures are honesty failures under
+    pressure: capitulating, under-flagging danger, inventing sources.
+    Resisting these is the lab’s oldest public research program, <a
+    href="https://arxiv.org/abs/2310.13548">sycophancy</a>, character, <a
+    href="https://arxiv.org/abs/2212.08073">constitutional methods</a>,
+    built for reasons unrelated to health. On clinical vignettes the
+    frontier models are indistinguishable. The separation happens in the
+    loop above, on the axis this lab has spent five years learning to
+    train.</p>
+    <p><strong>Trust arrives through clinicians’ hands, and the lab’s job is
+    to deserve it.</strong> Professions convert by delegating and watching
+    the work hold; papers arrive afterward, as ratification. <a
+    href="https://www.anthropic.com/economic-index">Agentic coding tools
+    flipped much of a skeptical software profession in under two years.</a>
+    Medicine can run the same conversion now: US law mandates read access to
+    records, and supervised use needs no write access, because nothing
+    happens without the clinician’s signature. Deserving it means the
+    opposite of the launch-post cycle: publish the failure modes first,
+    claim only what held, and let the delegated work make the argument. When
+    hundreds of thousands of clinicians routinely hand over multi-day
+    follow-up and see it hold, that cohort moves the profession, and the
+    definitive trials will come from medicine itself, health systems testing
+    a model worth testing, the way a national medical group is already
+    trialing the simulator-trained model on real patients. A lab grading its
+    own model would prove nothing anyway.</p>
+    <p><strong>The stake is AI’s license to operate, on the same five-year
+    clock.</strong> A <a
+    href="https://www.pewresearch.org/internet/2023/08/28/growing-public-concern-about-the-role-of-artificial-intelligence-in-daily-life/">majority
+    of Americans are more concerned than excited about AI</a> while the
+    industry asks them to absorb data centers and labor disruption on faith,
+    and clinicians are dismantling the cure-cancer timeline <a
+    href="https://x.com/DarioAmodei/status/2088758819304443967">in the
+    replies to that very thread</a>. A drug for late-stage disease in 2038
+    buys no patience in 2028. A doctor in everyone’s pocket, felt by
+    billions, is the most legible benefit AI can deliver on the clock that
+    matters, and delivering it is how the industry earns the room to build
+    the rest. <a
+    href="https://darioamodei.com/essay/machines-of-loving-grace">“Machines
+    of Loving Grace”</a> set out to make the upside concrete. This is the
+    upside that can arrive on time.</p>
+    <p>Predictions:</p>
+    <ul>
+    <li>By 2030, more people will have had blood pressure, TB, or depression
+    treatment managed with an AI agent in the loop than will have taken any
+    AI-discovered drug.</li>
+    <li>Autonomy widens from renewals to protocol-based treatment initiation
+    in at least one US state and one national program by 2028.</li>
+    <li>Hundreds of thousands of clinicians routinely delegate multi-day
+    tasks to agents by 2028.</li>
+    <li>The first billion-dollar business selling the consultation itself
+    exists before the first AI-discovered drug reaches a billion in
+    sales.</li>
+    </ul>
+    <p>The compressed century is worth fighting for, and nothing here asks
+    anyone to stop. The picture I cannot shake is a different one: the last
+    person who dies of something we knew how to treat in 1995. Ten million
+    people a year are waiting on a cure that already exists. Delivering it
+    is the simple cure. It is the simple thing that works.</p>
+    <h2 id="sources">Sources</h2>
+    <p><strong>The exchange.</strong> <a
+    href="https://x.com/DarioAmodei/status/2088758819304443967">Amodei, X
+    thread and replies, Aug 2026</a> · <a
+    href="https://thenextweb.com/news/dario-amodei-ai-public-trust-cure-cancer-ipo">The
+    Next Web coverage</a> · <a
+    href="https://bravenewcoin.com/insights/dario-amodeis-unusually-personal-case-for-ai">Brave
+    New Coin coverage</a> · <a
+    href="https://darioamodei.com/essay/machines-of-loving-grace">Machines
+    of Loving Grace</a></p>
+    <p><strong>The gap.</strong> <a
+    href="https://doi.org/10.1016/S0140-6736%2818%2931668-4">Kruk et al.,
+    Lancet 2018 (5.0M/3.6M)</a> · <a
+    href="https://doi.org/10.1016/S2214-109X%2818%2930386-3">Kruk et al.,
+    Lancet Glob Health 2018 (8.6M)</a> · <a
+    href="https://www.oecd.org/en/publications/2023/11/health-at-a-glance-2023_e04f8239/full-report/avoidable-mortality-preventable-and-treatable_e7407977.html">OECD
+    Health at a Glance 2023, avoidable mortality</a> · <a
+    href="https://www.oecd.org/content/dam/oecd/en/data/datasets/oecd-health-statistics/avoidable-mortality-2019-joint-oecd-eurostat-list-preventable-treatable-causes-of-death.pdf">OECD/Eurostat
+    cause list</a> · <a href="https://doi.org/10.3322/caac.21834">GLOBOCAN
+    2022</a> · <a
+    href="https://doi.org/10.1136/bmjqs-2021-014130">Newman-Toker et al.,
+    BMJ Qual Saf 2024</a> · <a
+    href="https://doi.org/10.1016/S0140-6736%2821%2901330-1">NCD-RisC,
+    Lancet 2021</a> · <a
+    href="https://doi.org/10.1016/S0140-6736%2820%2930752-2">GBD 2019 Risk
+    Factors</a> · <a
+    href="https://www.who.int/teams/global-tuberculosis-programme/tb-reports/global-tuberculosis-report-2024">WHO
+    Global TB Report 2024</a> · <a
+    href="https://doi.org/10.1371/journal.pmed.1003901">Moitra et al., PLoS
+    Med 2022</a></p>
+    <p><strong>Judgment.</strong> <a
+    href="https://www.ahajournals.org/doi/10.1161/01.hyp.0000200702.76436.4b">Okonofua
+    et al., Hypertension 2006</a> · <a
+    href="https://pubmed.ncbi.nlm.nih.gov/?term=Zheutlin+SPRINT+therapeutic+inertia">Zheutlin
+    et al., JAMA Netw Open 2022</a> · <a
+    href="https://doi.org/10.1371/journal.pmed.1002389">Tucker et al., PLoS
+    Med 2017 (self-monitoring IPD meta-analysis)</a> · <a
+    href="https://doi.org/10.1097/MD.0000000000005641">Abegaz et al.,
+    Medicine 2017</a> · <a
+    href="https://doi.org/10.1016/j.amjmed.2006.08.033">Bangalore et al., Am
+    J Med 2007</a> · <a
+    href="https://doi.org/10.1001/jama.2013.108769">Jaffe et al., JAMA 2013
+    (Kaiser)</a> · <a href="https://doi.org/10.1001/jama.2020.14545">Muntner
+    et al., JAMA 2020</a> · <a
+    href="https://doi.org/10.1503/cmaj.101767">McAlister et al., CMAJ 2011
+    (Canada)</a> · <a
+    href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8722631/">Bull WHO 2022
+    (India missed opportunities)</a> · <a
+    href="https://www.thelancet.com/journals/lanwpc/article/PIIS2666-6065%2824%2900182-2/fulltext">Lancet
+    Reg Health WP 2024 (Philippines)</a> · <a
+    href="https://link.springer.com/article/10.1186/s12889-025-22284-4">BMC
+    Public Health 2025 (screening coverage)</a> · <a
+    href="https://doi.org/10.1056/NEJMoa1717250">Victor et al., NEJM 2018
+    (barbershops)</a> · <a
+    href="https://www.stoptb.org/global-drug-facility-gdf/gdf-product-catalog">Global
+    Drug Facility catalog</a> · <a
+    href="https://msfaccess.org/cepheid-danaher-reduces-price-tb-test-20-following-global-campaign">MSF/Cepheid
+    Xpert price</a> · <a
+    href="https://data.unicef.org/topic/child-health/pneumonia/">UNICEF
+    pneumonia data</a> · <a
+    href="https://resolvetosavelives.org/cardiovascular-health/hypertension/">Resolve
+    to Save Lives, HEARTS</a> · <a
+    href="https://doi.org/10.1001/jama.2016.19102">Chibanda et al., JAMA
+    2016 (Friendship Bench)</a> · <a
+    href="https://doi.org/10.1080/16506073.2017.1401115">Carlbring et al.,
+    2018 (guided iCBT)</a> · <a
+    href="https://doi.org/10.1016/S0140-6736%2815%2960160-X">Meara et al.,
+    Lancet 2015 (surgery)</a> · <a
+    href="https://doi.org/10.1056/NEJMoa2407001">Bekker et al., NEJM 2024
+    (lenacapavir)</a> · <a
+    href="https://www.who.int/news-room/fact-sheets/detail/immunization-coverage">WHO
+    immunization coverage (HPV)</a> · <a
+    href="https://www.cdc.gov/nchs/fastats/access-to-health-care.htm">NCHS
+    FastStats, usual source of care</a></p>
+    <p><strong>Timelines.</strong> <a
+    href="https://www.fda.gov/vaccines-blood-biologics/coronavirus-covid-19-cber-regulated-biologics/moderna-covid-19-vaccines">FDA,
+    Moderna COVID-19 vaccine</a> · <a
+    href="https://doi.org/10.1056/NEJMoa2407417">Wolchok et al., NEJM 2024
+    (CheckMate 067, 10-year)</a> · <a
+    href="https://doi.org/10.1056/NEJMc1713444">Yarchoan et al., NEJM 2017
+    (mutational burden and response)</a> · <a
+    href="https://doi.org/10.1056/NEJMoa1917338">Lei et al., NEJM 2020 (HPV
+    vaccination and invasive cancer)</a> · <a
+    href="https://doi.org/10.1056/NEJMoa1102873">NLST, NEJM 2011</a> · <a
+    href="https://doi.org/10.1016/S0140-6736%2821%2900731-5">Menon et al.,
+    Lancet 2021 (UKCTOCS)</a> · <a
+    href="https://www.nhs-galleri.org/">NHS-Galleri trial</a> · <a
+    href="https://journal.chestnet.org/article/S0012-3692%2824%2900654-8/abstract">CHEST
+    2024 review (lung-screening uptake)</a> · <a
+    href="https://www.ahdbonline.com/online-first/3148-concerns-related-to-benefits-and-harms-of-real-world-shared-decision-making-for-lung-cancer-screening">Mulshine
+    &amp; Pyenson on shared decision-making</a> · <a
+    href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8568647/">Systematic
+    review, provider recommendation and HPV vaccination</a> · <a
+    href="https://doi.org/10.1056/NEJMoa2305032">Sperling et al., NEJM 2023
+    (A4)</a> · <a
+    href="https://www.fda.gov/drugs/news-events-human-drugs/fdas-decision-approve-new-treatment-alzheimers-disease">FDA,
+    aducanumab decision</a> · <a
+    href="https://doi.org/10.1038/nrd3681">Scannell et al., 2012 (Eroom’s
+    law)</a> · <a
+    href="https://doi.org/10.1038/s43587-024-00702-3">Olshansky et al.,
+    Nature Aging 2024</a> · <a
+    href="https://www.kff.org/global-health-policy/fact-sheet/the-u-s-presidents-emergency-plan-for-aids-relief-pepfar/">KFF,
+    PEPFAR</a></p>
+    <p><strong>The technology.</strong> <a
+    href="https://commerce.utah.gov/2026/01/06/news-release-utah-and-doctronic-announce-groundbreaking-partnership-for-ai-prescription-medication-renewals/">Utah
+    OAIP × Doctronic</a> · <a
+    href="https://arstechnica.com/health/2026/01/utah-allows-ai-to-autonomously-prescribe-medication-refills/">Ars
+    Technica on the sandbox</a> · <a
+    href="https://arxiv.org/abs/2505.08775">HealthBench (arXiv)</a> · <a
+    href="https://openai.com/index/healthbench/">OpenAI, HealthBench</a> ·
+    <a
+    href="https://the-decoder.com/openai-says-its-latest-models-outperform-doctors-in-medical-benchmark/">The
+    Decoder headline</a> · <a
+    href="https://arstechnica.com/ai/2026/01/chatgpt-health-lets-you-connect-medical-records-to-an-ai-that-makes-things-up/">Ars
+    Technica, ChatGPT Health launch</a> · <a
+    href="https://www.statnews.com/2017/09/05/watson-ibm-cancer/">STAT,
+    Watson for Oncology</a> · <a
+    href="https://en.wikipedia.org/wiki/Babylon_Health">Babylon Health</a> ·
+    <a
+    href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12896728/">Ophthalmic-emergency
+    model comparison, 2026</a> · <a
+    href="https://www.nature.com/articles/s41591-025-04074-y">Bean et al.,
+    Nature Medicine 2026 (n=1,298)</a> · <a
+    href="https://www.newswise.com/articles/research-identifies-blind-spots-in-ai-medical-triage">Mount
+    Sinai safety evaluation (coverage)</a> · <a
+    href="https://doi.org/10.1038/s41591-026-04297-7">Mount Sinai safety
+    evaluation (paper)</a> · <a
+    href="https://www.nature.com/articles/s41746-025-01684-1">Chen et al.,
+    npj Digital Medicine 2025 (sycophancy)</a> · <a
+    href="https://www.forbes.com/sites/amyfeldman/2026/07/07/how-openai-plans-to-win-over-doctors-patients-and-hospitals/">Forbes,
+    OpenAI’s physician network</a> · <a
+    href="https://doi.org/10.1038/s41586-025-08866-7">Tu et al., Nature 2025
+    (AMIE)</a> · <a href="https://arxiv.org/abs/2608.07418">Liévin et al.,
+    ResidencyRL</a> · <a
+    href="https://research.google/blog/collaborating-on-a-nationwide-randomized-study-of-ai-in-real-world-virtual-care/">Google
+    Research × Included Health trial</a></p>
+    <p><strong>The market.</strong> <a
+    href="https://apps.who.int/nha/database">WHO Global Health Expenditure
+    Database</a> · <a
+    href="https://www.who.int/publications/i/item/9789240080379">WHO/World
+    Bank, Tracking UHC 2023</a> · <a href="https://investors.hims.com/">Hims
+    &amp; Hers investor relations (FY2024)</a> · <a
+    href="https://healthcostinstitute.org/">Health Care Cost Institute</a> ·
+    <a
+    href="https://www.heart.org/en/about-us/heart-and-stroke-association-statistics">AHA
+    statistics</a> · <a href="https://www.abridge.com/blog/series-e">Abridge
+    Series E</a> · <a
+    href="https://www.fiercehealthcare.com/ai-and-machine-learning/ambient-ai-startup-abridge-scores-300m-series-e-backed-a16z-and-khosla">Fierce
+    Healthcare on Abridge</a> · <a
+    href="https://www.cnbc.com/2026/01/21/openevidence-chatgpt-for-doctors-doubles-valuation-to-12-billion.html">CNBC
+    on OpenEvidence</a> · <a
+    href="https://elceo.com/investigaciones-especiales/farmacias-similares-las-atipicas-donaciones-detras-de-las-fundaciones-de-dr-simi/">El
+    CEO, Farmacias Similares investigation</a> · <a
+    href="https://expansion.mx/empresas/2025/11/11/dr-simi-farmacias-otros-negocios-y-fundaciones">Expansión
+    on Dr. Simi</a></p>
+    <p><strong>The lab and the license.</strong> <a
+    href="https://arxiv.org/abs/2310.13548">Sharma et al., sycophancy
+    (Anthropic)</a> · <a href="https://arxiv.org/abs/2212.08073">Bai et al.,
+    Constitutional AI</a> · <a
+    href="https://www.anthropic.com/economic-index">Anthropic Economic
+    Index</a> · <a
+    href="https://www.pewresearch.org/internet/2023/08/28/growing-public-concern-about-the-role-of-artificial-intelligence-in-daily-life/">Pew
+    Research, AI concern</a></p>
+  </article>
+
+  <hr class="dinkus">
+
+  <section class="footnotes" id="footnotes" role="doc-endnotes">
+    <h2>Footnotes</h2>
+    <ol>
+      <li id="fn1"><p>The ten million is a construction from two ledgers that
+      count differently: the Lancet Global Health Commission benchmarks excess
+      deaths in 137 countries against strong performers (8.6M, 2016; 5.0M
+      among people who used the system vs 3.6M who never did), while the OECD
+      uses a fixed cause list capped at age 75 (&gt;1M “treatable”). Treat it
+      as an order of magnitude; the two accounts cannot be added precisely.<a
+      href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+      <li id="fn2"><p>The OECD assigns ~1.9M of ~3M avoidable premature deaths
+      to its preventable column (behavior, public health) and the Commission
+      assigns ~7M of 15.6M excess deaths to public-health prevention; only the
+      treatable columns enter the ten million. Mixed-cause diseases such as
+      diabetes split between columns.<a href="#fnref2" class="footnote-back"
+      role="doc-backlink">↩︎</a></p></li>
+      <li id="fn3"><p>Measurement needs a device, and only a device: engineers
+      built automated cuffs for unskilled self-use, US and UK guidelines
+      (USPSTF, NICE) now prefer confirming diagnosis with readings patients
+      take themselves, and SPRINT’s protocol frequently used automated
+      readings with no observer in the room. In the Los Angeles barbershop
+      trial, barbers measured and pharmacists prescribed: 63.6% reached
+      control versus 11.7% in usual care. What survives of the physical
+      constraint is validated-device procurement and cuff sizing; cuffless
+      phone-only measurement lacks clinical validation. Loop pricing: a
+      validated cuff runs ~$20 for years of service; protocol drug regimens
+      cost a few dollars per patient-year at pooled generic prices; inference
+      costs well under a dollar per consultation and falling. The vignette
+      prices the destination: today a clinician signs the treatment start, and
+      the staged path in the market section describes how certified protocol
+      scopes retire that signature.<a href="#fnref3" class="footnote-back"
+      role="doc-backlink">↩︎</a></p></li>
+      <li id="fn4"><p>A 2017 individual-patient-data meta-analysis of
+      self-monitoring trials found home readings alone produced little or no
+      blood pressure change; readings moved outcomes only when paired with
+      co-interventions that acted on them, medication titration, follow-up,
+      education. The loop failed to ship for a second reason as well: a
+      pharmacy or living-room reading belongs to no one, so no record follows
+      it and no one owns the number. Hardware without an acting layer measures
+      the disease and leaves it.<a href="#fnref4" class="footnote-back"
+      role="doc-backlink">↩︎</a></p></li>
+      <li id="fn5"><p>The full cascade: 22.6% of Indian adults with
+      hypertension went undiagnosed despite a facility visit within the year
+      (realized, diagnosis rises 54.8→77.3%); the Philippines shows
+      62.7→74.4%; even under India’s national screening program, ~40% of
+      eligible outpatients leave unmeasured. Doctors intensified at 13.1% of
+      above-target visits (n=7,253; modeled control 46.2→65.9%); inside
+      SPRINT, no intensification at 50–60% of above-target visits. ~45%
+      non-adherence falls ~24% from single-pill combination alone; Kaiser
+      44→80% by 2009 and ~90% since; US national control 54→44%; Canada ~65%;
+      world ~21%.<a href="#fnref5" class="footnote-back"
+      role="doc-backlink">↩︎</a></p></li>
+      <li id="fn6"><p>Zimbabwe’s Friendship Bench: 14% still depressed at six
+      months versus 50% under usual care (n=573). Guided internet CBT matches
+      face-to-face in meta-analysis. Engagement with fully automated therapy
+      over months has no comparable evidence base, so machines take the
+      supervised medication follow-up and measurement role in the near term.<a
+      href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+      <li id="fn7"><p>Exclusions and addressable share, mapping mine, anchors
+      published. From the Commission’s condition table: cardiovascular disease
+      is 33% of amenable deaths (2.82M; 84% among system users), neonatal
+      conditions, TB, and road injuries together ~2.7M, amenable cancer 0.48M
+      (89% access-driven), mental and neurological 0.46M. I classify as
+      physical-infrastructure-dominant: road injuries (trauma surgery),
+      amenable cancer (surgery, radiotherapy, chemotherapy), roughly half of
+      neonatal deaths, and portions of maternal and congenital causes:
+      one-fifth to one-quarter excluded, leaving ~7.5–8M. Closable fraction:
+      the best systems’ own residuals on all-comers denominators bound the
+      hard tail (Kaiser ~10 points, Canada ~35, of a 79-point global
+      hypertension gap); TB succeeds in &gt;85% of found cases and drug
+      resistance is ~4% of incidence, so the unfound carry no extra treatment
+      difficulty. Bounds of 60–85% closable give ~5–7M addressable
+      deaths/yr.<a href="#fnref7" class="footnote-back"
+      role="doc-backlink">↩︎</a></p></li>
+      <li id="fn8"><p>Cancer column: 9.7M deaths × ~14 remaining years, since
+      cancer deaths cluster near 70. This is generous to the cure side,
+      because curing cancer means many staggered cures. Screen-detectable
+      cancers also appear in the delivery column, so the two totals cannot be
+      added.<a href="#fnref8" class="footnote-back"
+      role="doc-backlink">↩︎</a></p></li>
+      <li id="fn9"><p>Delivery column: 5–7M addressable deaths × 25–30
+      remaining years ≈ 125–210M; I quote 125–200M. Conservative cumulative
+      check: 125M/yr from ~2027 accumulates ~3.0B healthy years by 2050 versus
+      ~1.1B for 140M/yr from ~2042. Caveats cutting both ways: the two death
+      counts use differing definitions; full coverage is an upper bound; both
+      columns are conditional, cures on the science, delivery on reliability
+      being proven and adopted.<a href="#fnref9" class="footnote-back"
+      role="doc-backlink">↩︎</a></p></li>
+      <li id="fn10"><p>Chinese researchers posted the sequence on January 11,
+      2020; Moderna finalized the design by January 13; the FDA authorized the
+      vaccine that December. Melanoma: in CheckMate 067 (previously untreated,
+      unresectable stage III/IV), ten-year overall survival was 43% on
+      nivolumab plus ipilimumab; the survival curves flatten near year three,
+      and among patients alive and progression-free at three years,
+      melanoma-specific survival at 7.5 years was 98%. Smokers’ lung cancer
+      partially shares melanoma’s mutation-visibility, and the same drugs
+      lifted metastatic five-year survival from roughly 5 to 15–20 percent;
+      pancreatic, liver, and most breast and colon cancers look nearly normal
+      to the immune system and gained little. Screening’s own surrogate trap:
+      UKCTOCS found ovarian cancer earlier and reduced no mortality, and the
+      flagship multi-cancer blood-test trial of this era, NHS-Galleri, grades
+      itself on the same stage-shift surrogate. Lung screening’s mandated
+      shared-decision-making visit is a Medicare requirement imposed on no
+      other cancer screening. Provider recommendation raises the odds a
+      teenager starts the HPV series roughly tenfold. The same pattern holds
+      beyond cancer: the definitive Alzheimer’s prevention trial ran most of a
+      decade and read out negative, and the FDA approved aducanumab on the
+      amyloid surrogate in 2021 before Biogen discontinued it in 2024.<a
+      href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+      <li id="fn11"><p>AMIE’s examinations used trained actors presenting
+      clean cases, which establishes trainability of history-taking and
+      management and leaves robustness to real users unproven. ResidencyRL’s
+      reward structure targets the three documented failure modes by
+      construction: adversarial simulators against capitulation,
+      safety-constrained rewards against missed urgency, multi-turn practice
+      against the elicitation gap. The Included Health trial, following a
+      feasibility study whose primary safety measure was supervisor
+      interruptions, is the first prospective test of transfer.<a
+      href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+      <li id="fn12"><p>Babylon Health, a UK company, claimed its AI triaged as
+      well as British GPs, ran the “GP at Hand” practice inside the NHS, and
+      operated Rwanda’s flagship subsidized digital-health service covering
+      millions of people. It went bankrupt in 2023 and left the Rwandan
+      deployment stranded mid-contract.<a href="#fnref12"
+      class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+      <li id="fn13"><p>Stage gates: the gate on supervised visits is how many
+      AI consultations one clinician can safely approve per hour; autonomy’s
+      gate is scope-by-scope proof plus a risk holder, sandbox, then statute,
+      then malpractice insurers able to price it, because once an actuary can
+      price a risk, a market exists. Ohio’s $20/month and Nairobi’s $0.50 are
+      illustrative price points, sized against Hims-style subscriptions and
+      Farmacias Similares’ cash floor. Systems paid per visit lose money on
+      prevented visits, which is why fee-for-service networks resist
+      longest.<a href="#fnref13" class="footnote-back"
+      role="doc-backlink">↩︎</a></p></li>
+    </ol>
+  </section>
+
+  <footer class="endmatter">
+    <a href="#top">Back to top</a>
+    <a href="https://scholar.google.com/citations?user=ScPCEy0AAAAJ">Diego Ardila</a>
+  </footer>
+</main>
+
+<script>
+(function () {
+  var root = document.documentElement;
+
+  /* ---- theme toggle ---- */
+  var themeBtn = document.querySelector(".theme-toggle");
+  themeBtn.addEventListener("click", function () {
+    var isDark = root.getAttribute("data-theme")
+      ? root.getAttribute("data-theme") === "dark"
+      : window.matchMedia("(prefers-color-scheme: dark)").matches;
+    var next = isDark ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("theme", next); } catch (e) {}
+  });
+
+  /* ---- contents sidebar ---- */
+  var toc = document.getElementById("toc");
+  var tocBtn = document.querySelector(".toc-toggle");
+  var scrim = document.querySelector(".toc-scrim");
+  var wide = window.matchMedia("(min-width: 78rem)");
+
+  function setToc(open) {
+    toc.classList.toggle("is-open", open);
+    scrim.classList.toggle("is-open", open && !wide.matches);
+    scrim.hidden = !(open && !wide.matches);
+    tocBtn.setAttribute("aria-expanded", String(open));
+  }
+  setToc(wide.matches);
+  tocBtn.addEventListener("click", function () {
+    setToc(!toc.classList.contains("is-open"));
+  });
+  scrim.addEventListener("click", function () { setToc(false); });
+  wide.addEventListener("change", function (e) { setToc(e.matches); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && toc.classList.contains("is-open") && !wide.matches) setToc(false);
+  });
+  toc.addEventListener("click", function (e) {
+    if (e.target.closest("a") && !wide.matches) setToc(false);
+  });
+
+  /* ---- current section highlight ---- */
+  var tocLinks = [].slice.call(toc.querySelectorAll("a"));
+  var targets = tocLinks
+    .map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); })
+    .filter(Boolean);
+  if ("IntersectionObserver" in window && targets.length) {
+    var visible = new Set();
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) visible.add(en.target.id); else visible.delete(en.target.id);
+      });
+      var first = targets.filter(function (t) { return visible.has(t.id); })[0];
+      tocLinks.forEach(function (a) {
+        a.classList.toggle("is-current", !!first && a.getAttribute("href") === "#" + first.id);
+      });
+    }, { rootMargin: "-20% 0px -70% 0px" });
+    targets.forEach(function (t) { io.observe(t); });
+  }
+
+  /* ---- footnote tooltips ---- */
+  var tip = document.createElement("div");
+  tip.className = "fn-tooltip";
+  tip.setAttribute("role", "tooltip");
+  document.body.appendChild(tip);
+  var hideTimer;
+
+  function show(ref) {
+    var note = document.getElementById(ref.getAttribute("href").slice(1));
+    if (!note) return;
+    clearTimeout(hideTimer);
+    tip.innerHTML = note.innerHTML;
+    var back = tip.querySelector(".footnote-back");
+    if (back) back.remove();
+    tip.classList.add("is-visible");
+    var r = ref.getBoundingClientRect();
+    var w = tip.offsetWidth;
+    var left = Math.min(
+      Math.max(12, r.left + window.scrollX + r.width / 2 - w / 2),
+      window.scrollX + document.documentElement.clientWidth - w - 12
+    );
+    var above = r.top > tip.offsetHeight + 24;
+    tip.style.left = left + "px";
+    tip.style.top = (above
+      ? r.top + window.scrollY - tip.offsetHeight - 10
+      : r.bottom + window.scrollY + 10) + "px";
+  }
+  function hide() {
+    hideTimer = setTimeout(function () { tip.classList.remove("is-visible"); }, 120);
+  }
+  tip.addEventListener("mouseenter", function () { clearTimeout(hideTimer); });
+  tip.addEventListener("mouseleave", hide);
+  [].forEach.call(document.querySelectorAll("a.footnote-ref"), function (ref) {
+    ref.addEventListener("mouseenter", function () { show(ref); });
+    ref.addEventListener("mouseleave", hide);
+    ref.addEventListener("focus", function () { show(ref); });
+    ref.addEventListener("blur", hide);
+  });
+})();
+</script>
+</body>
+</html>
