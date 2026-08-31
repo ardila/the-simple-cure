@@ -852,7 +852,9 @@
     on Tuesday retrains on Friday. The supervised tier is what makes that
     loop safe to run at scale: the AI conducts the visit, a clinician
     approves or corrects, and every correction is labeled data from exactly
-    the encounters where today’s models break. Deploy, fail under
+    the encounters where today’s models break. (But
+    what about HIPAA?<a href="#fn18" class="footnote-ref" id="fnref18"
+    role="doc-noteref"><sup>18</sup></a>) Deploy, fail under
     supervision, retrain, redeploy, at model-release cadence. The lab that wires deployment into its training loop compounds fastest.</p>
     <p><strong>The bottleneck capability is the one Anthropic has studied
     longest.</strong> The documented failures are honesty failures under
@@ -860,9 +862,9 @@
     Resisting these is the lab’s oldest public research program, <a
     href="https://arxiv.org/abs/2310.13548">sycophancy</a>, character, <a
     href="https://arxiv.org/abs/2212.08073">constitutional methods</a>,
-    built for reasons unrelated to health.<a href="#fn18"
-    class="footnote-ref" id="fnref18"
-    role="doc-noteref"><sup>18</sup></a> On clinical vignettes the
+    built for reasons unrelated to health.<a href="#fn19"
+    class="footnote-ref" id="fnref19"
+    role="doc-noteref"><sup>19</sup></a> On clinical vignettes the
     frontier models are indistinguishable. The frontier models will separate in
     that deployment loop, and they will separate on honesty under pressure,
     the capability this lab has spent five years learning to train.</p>
@@ -906,8 +908,8 @@
     <li>Hundreds of thousands of clinicians routinely delegate multi-day
     tasks involving patient interaction to agents by 2028.</li>
     </ul>
-    <p>The compressed century<a href="#fn19" class="footnote-ref"
-    id="fnref19" role="doc-noteref"><sup>19</sup></a> is worth fighting
+    <p>The compressed century<a href="#fn20" class="footnote-ref"
+    id="fnref20" role="doc-noteref"><sup>20</sup></a> is worth fighting
     for, and nothing here asks
     anyone to stop. The picture I cannot shake is a different one: the last
     person who dies without access to something we knew how to treat in
@@ -1088,7 +1090,12 @@
     href="https://www.anthropic.com/economic-index">Anthropic Economic
     Index</a> · <a
     href="https://www.pewresearch.org/internet/2023/08/28/growing-public-concern-about-the-role-of-artificial-intelligence-in-daily-life/">Pew
-    Research, AI concern</a></p>
+    Research, AI concern</a> · <a
+    href="https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html">HHS,
+    HIPAA de-identification guidance</a> · <a
+    href="https://cosmos.epic.com/">Epic Cosmos</a> · <a
+    href="https://www.wsj.com/articles/google-s-secret-project-nightingale-gathers-personal-health-data-on-millions-11573496790">WSJ,
+    Project Nightingale</a></p>
   </article>
 
   <hr class="dinkus">
@@ -1317,23 +1324,61 @@
       against cash urgent-care prices and Farmacias Similares’ cash
       floor.<a href="#fnref17" class="footnote-back"
       role="doc-backlink">↩︎</a></p></li>
-    <li id="fn18"><p>Sycophancy is a model’s tendency to tell the user
+    <li id="fn18"><p>The data loop has to clear HIPAA, and the lab
+      trains one model for everyone, so the question is what may flow back
+      into it. Three streams can, each with its own gate.</p>
+      <ol type="1">
+      <li><strong>Consumer conversations.</strong> HIPAA binds providers
+      and their vendors, not a person asking a model about their own
+      symptoms, so the health conversations people already have with
+      models directly, used with the user’s consent, never touch the
+      statute. What this stream lacks is expert oversight, so the lab must
+      add it: clinicians labeling sampled conversations. That labeling
+      does two jobs at once, post-deployment safety monitoring for the
+      people already using the model unsupervised, and training signal
+      from exactly the muddled real-user encounters where models
+      fail.</li>
+      <li><strong>De-identified clinical data.</strong> Business associate
+      agreements routinely permit <a
+      href="https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html">de-identification</a>,
+      after which the data is no longer PHI; the scribe industry already
+      trains on millions of de-identified clinical conversations, and
+      health systems already pool de-identified records at the scale of <a
+      href="https://cosmos.epic.com/">a quarter-billion patients</a>.
+      Free-text conversation is harder to de-identify than a lab value;
+      this stream is proven but not free.</li>
+      <li><strong>Authorized data.</strong> In cash-pay products, the
+      patient’s signup authorization covers what a hospital’s agreement
+      will not. And much of the correction signal can cross as distilled
+      failure patterns that harden the adversarial simulators, rather than
+      as transcripts.</li>
+      </ol>
+      <p>The remaining constraint is trust, not law: <a
+      href="https://www.wsj.com/articles/google-s-secret-project-nightingale-gathers-personal-health-data-on-millions-11573496790">Google’s
+      Ascension partnership was lawful under a standard agreement and
+      still became a scandal</a>. And clinician corrections accrue to
+      whoever owns the deployment surface; a frontier lab is unlikely to
+      carry clinical liability itself, so the realistic shape is a trade,
+      model access for data flow, with partners who already hold the
+      licenses and the insurance.<a href="#fnref18"
+      class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+      <li id="fn19"><p>Sycophancy is a model’s tendency to tell the user
       what they want to hear, including folding under pushback when the
       user is wrong; its medical form is capitulating to “it’s probably
       nothing.” Constitutional methods train a model against an explicit,
       published list of principles rather than against raw human
       approval, which makes the trained behavior auditable. Character
       work shapes how the model behaves when no one is checking. All
-      three predate any health application.<a href="#fnref18"
+      three predate any health application.<a href="#fnref19"
       class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-      <li id="fn19"><p>“The compressed 21st century” is the central image
+      <li id="fn20"><p>“The compressed 21st century” is the central image
       of <a
       href="https://darioamodei.com/essay/machines-of-loving-grace">“Machines
       of Loving Grace”</a>: AI-accelerated biology delivering a century’s
       worth of medical progress, the new cures included, in five to ten
       years. This essay argues about sequencing within that century, not
       against it: delivery first, because delivery is the part that can
-      arrive on the five-year clock.<a href="#fnref19"
+      arrive on the five-year clock.<a href="#fnref20"
       class="footnote-back" role="doc-backlink">↩︎</a></p></li>
       </ol>
   </section>
