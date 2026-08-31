@@ -296,6 +296,15 @@
     font-size: 1rem;
   }
 
+  figure { margin: 2.25rem 0; }
+  figure svg { width: 100%; height: auto; display: block; }
+  figure svg text { font-family: var(--serif); }
+  figcaption {
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    margin-top: 0.625rem;
+  }
   .footnotes h2 { font-size: 1.5rem; margin-bottom: 1.5rem; }
   .footnotes ol {
     margin: 0;
@@ -416,7 +425,7 @@
     <li><a href="#the-bar">The bar and the clock</a></li>
     <li><a href="#a-second-cancer">A second cancer</a></li>
     <li><a href="#what-the-gap-is-made-of-clinical-judgment">What the gap is made of: clinical judgment</a></li>
-    <li><a href="#the-arithmetic-scaling-the-standard-curing-cancer">The arithmetic: scaling the standard &gt; curing cancer</a></li>
+    <li><a href="#the-arithmetic-scaling-the-standard-curing-cancer">The arithmetic: what five years can claim</a></li>
     <li><a href="#why-it-hasnt-happened-yet">Why it hasn’t happened yet</a></li>
     <li><a href="#why-it-pays-for-itself">Why it pays for itself</a></li>
     <li><a href="#five-years">Five years</a></li>
@@ -486,6 +495,37 @@
     <p>Most of this disease sits inside health systems: of the 8.6 million,
     five million reached care that failed them, and 3.6 million never got
     care. Bad care kills more people than no care.</p>
+    <figure>
+    <svg viewBox="0 0 640 320" role="img" aria-label="Two columns compared: the treatment gap, ten million deaths a year (5.0 million reached care that failed to deliver a known treatment, 3.6 million never got care, 1.0 million in rich countries), beside cancer, 9.7 million a year (1.8 lung, 0.9 colorectal, 0.8 liver, 0.7 breast, 0.7 stomach, 4.9 all other).">
+      <text x="55" y="20" font-size="15" fill="currentColor" opacity="0.75">The treatment gap · <tspan font-weight="600">≈10M deaths/yr</tspan></text>
+      <rect x="55" y="34" width="205" height="130" fill="currentColor" opacity="0.85"/>
+      <text x="66" y="58" font-size="13.5" fill="var(--bg)">reached care that failed</text>
+      <text x="66" y="76" font-size="13.5" fill="var(--bg)">to deliver a known treatment</text>
+      <text x="66" y="96" font-size="13.5" font-weight="600" fill="var(--bg)">5.0M</text>
+      <rect x="55" y="166" width="205" height="94" fill="currentColor" opacity="0.5"/>
+      <text x="66" y="190" font-size="13.5" fill="currentColor">never got care</text>
+      <text x="66" y="208" font-size="13.5" font-weight="600" fill="currentColor">3.6M</text>
+      <rect x="55" y="262" width="205" height="26" fill="currentColor" opacity="0.25"/>
+      <text x="66" y="280" font-size="13.5" fill="currentColor">rich countries · 1.0M+</text>
+      <text x="350" y="20" font-size="15" fill="currentColor" opacity="0.75">Cancer, every type · <tspan font-weight="600">9.7M deaths/yr</tspan></text>
+      <rect x="350" y="34" width="205" height="47" fill="currentColor" opacity="0.5"/>
+      <text x="361" y="61" font-size="13.5" fill="currentColor">lung · 1.8M</text>
+      <rect x="350" y="83" width="205" height="23" fill="currentColor" opacity="0.4"/>
+      <text x="361" y="100" font-size="13" fill="currentColor">colorectal · 0.9M</text>
+      <rect x="350" y="108" width="205" height="20" fill="currentColor" opacity="0.32"/>
+      <text x="361" y="123" font-size="13" fill="currentColor">liver · 0.8M</text>
+      <rect x="350" y="130" width="205" height="17" fill="currentColor" opacity="0.25"/>
+      <text x="361" y="144" font-size="12.5" fill="currentColor">breast · 0.7M</text>
+      <rect x="350" y="149" width="205" height="17" fill="currentColor" opacity="0.19"/>
+      <text x="361" y="163" font-size="12.5" fill="currentColor">stomach · 0.7M</text>
+      <rect x="350" y="168" width="205" height="127" fill="currentColor" opacity="0.1" stroke="currentColor" stroke-opacity="0.35"/>
+      <text x="361" y="235" font-size="13.5" fill="currentColor">all other cancers · 4.9M</text>
+    </svg>
+    <figcaption>The ten million, assembled, with cancer for scale. Most of
+    the gap is not distance from care: half of it reached a health system
+    that failed to treat. Kruk et al., Lancet 2018; OECD 2023; GLOBOCAN
+    2022.</figcaption>
+    </figure>
     <p>America, which pays more for medical judgment than any society in
     history, has the <a
     href="https://www.oecd.org/en/publications/2023/11/health-at-a-glance-2023_e04f8239/full-report/avoidable-mortality-preventable-and-treatable_e7407977.html">worst
@@ -580,9 +620,9 @@
     <p>One limit. Some deaths need physical things: operating rooms, oxygen,
     dialysis, blood. <a
     href="https://doi.org/10.1016/S0140-6736%2815%2960160-X">Five billion
-    people lack safe surgery</a>, and no consultation fixes that; mapping
-    the published cause tables, I exclude roughly a fifth to a quarter of
-    the ten million.<a href="#fn8" class="footnote-ref" id="fnref8"
+    people lack safe surgery</a>, and no consultation fixes that; mapping the
+    published cause tables, roughly a third of the ten million sits beyond
+    a consultation’s reach.<a href="#fn8" class="footnote-ref" id="fnref8"
     role="doc-noteref"><sup>8</sup></a></p>
     <p>Won’t better molecules fix delivery instead? They keep arriving, and
     they keep proving the point. The <a
@@ -598,82 +638,81 @@
     American adult in ten</a> has no usual source of care. The gap is made
     of judgment.</p>
     <h2 id="the-arithmetic-scaling-the-standard-curing-cancer">The
-    arithmetic: scaling the standard &gt; curing cancer</h2>
-    <p>Curing cancer entirely is worth about 140 million healthy years of
-    life per year,<a href="#fn9" class="footnote-ref" id="fnref9"
-    role="doc-noteref"><sup>9</sup></a> arriving in the 2040s at the
-    earliest, conditional on the science. Delivering existing medicine to
-    everyone is worth roughly 125 to 200 million healthy years per year,
-    starting now.<a href="#fn10" class="footnote-ref" id="fnref10"
-    role="doc-noteref"><sup>10</sup></a> The two are comparable on annual
-    flow, with delivery likely larger, because these deaths come decades
-    younger: pneumonia at two, TB at forty, stroke in the fifties. The
-    decisive difference is timing. A fifteen-year head start makes delivery
-    roughly threefold larger in accumulated healthy years through 2050 at my
-    most conservative estimate.</p>
-    <p>Is “2040s at the earliest” fair? Moderna designed its vaccine within
-    two days of seeing the viral sequence, and <a
-    href="https://www.fda.gov/vaccines-blood-biologics/coronavirus-covid-19-cber-regulated-biologics/moderna-covid-19-vaccines">authorization
-    took eleven months</a> of trials, manufacturing, and review under
-    wartime urgency. That pace depended on the disease: COVID killed in
-    weeks, so a trial could prove the vaccine worked in weeks. Cancer offers
-    no such speed. Late-stage cancer is the hardest version of the problem,
-    because by the time a tumor has spread it has evolved into many
-    genetically distinct diseases inside one patient, and each round of
-    treatment breeds the clones that resist it. AI may eventually design
-    therapies that outrun that evolution, and immunotherapy already
-    sometimes does. Its best case is melanoma: <a
-    href="https://doi.org/10.1056/NEJMoa2407417">four in ten people with
-    metastatic disease now live past ten years</a>, most long off treatment,
-    effectively cured. But melanoma is a special target. Years of UV damage
-    mutate its cells until <a
-    href="https://doi.org/10.1056/NEJMc1713444">the immune system can see
-    them as foreign</a>; the drugs only release the brakes. The tumors that
-    do most of the killing offer no such target, and even the best case
-    leaves six in ten dead. So the realistic path to a world with little
-    cancer runs through prevention, screening, and treating early disease,
-    and those trials are slow for a simple reason: proving you prevented
-    deaths means waiting years for deaths to not happen. The HPV vaccine won
-    approval in 2006 and <a
-    href="https://doi.org/10.1056/NEJMoa1917338">proved it prevents invasive
-    cancer in 2020</a>. The definitive <a
-    href="https://doi.org/10.1056/NEJMoa1102873">lung-screening trial took a
-    decade</a>. The <a
-    href="https://doi.org/10.1016/S0140-6736%2821%2900731-5">ovarian one ran
-    twenty years, caught disease earlier, and saved no one</a>. And cancer is the
-    example, not the exception: the other heavy uncured burdens, heart
-    disease, dementia, diabetes, are chronic, and chronic disease means
-    trials that run years to decades; <a
-    href="https://doi.org/10.1056/NEJMoa2305032">the definitive
-    Alzheimer’s prevention trial ran most of a decade and read out
-    negative</a>. Add that <a
-    href="https://doi.org/10.1038/nrd3681">drug R&amp;D productivity halved
-    every nine years for six decades</a> and that <a
-    href="https://doi.org/10.1038/s43587-024-00702-3">life-expectancy gains
-    are decelerating</a>.<a href="#fn11" class="footnote-ref" id="fnref11"
-    role="doc-noteref"><sup>11</sup></a> The long bets are still worth
-    making. These numbers say when they pay.</p>
-    <p>And when the slow trials succeed, the winners join the queue behind
-    the same bottleneck. Lung screening proved it saves lives in 2011.
-    Fifteen years later, <a
-    href="https://journal.chestnet.org/article/S0012-3692%2824%2900654-8/abstract">fewer
-    than one eligible American in five has been screened</a>, and the
-    obstacle the field itself names is <a
-    href="https://www.ahdbonline.com/online-first/3148-concerns-related-to-benefits-and-harms-of-real-world-shared-decision-making-for-lung-cancer-screening">a
-    required counseling conversation that clinicians have no time to
-    hold</a>. The strongest predictor of whether a teenager gets the HPV
-    vaccine is <a
-    href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8568647/">whether a
-    clinician recommends it</a>. Even the cures we already own wait on
-    twenty minutes of judgment. Curing cancer, down its realistic path, ends
-    as a delivery problem.</p>
-    <p>We have run this experiment. Effective HIV therapy existed in 1996;
-    more than ten million Africans died before <a
-    href="https://www.kff.org/global-health-policy/fact-sheet/the-u-s-presidents-emergency-plan-for-aids-relief-pepfar/">PEPFAR</a>,
-    America’s AIDS treatment program, arrived in 2003. The molecule was
-    seven years old when the delivery showed up, and the delivery was the
-    cure. We are in 1996 again. The undelivered technology is the
-    consultation itself.</p>
+arithmetic: what five years can claim</h2>
+
+<p>Set the two problems side by side in one currency: years of life,
+counted on the standard life table. Cancer, all of it, costs about 265
+million years per year.<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> Undelivered treatment costs about
+490 million: similar in deaths, ten million against 9.7, and nearly
+twice the years, because its deaths come young: pneumonia at two, TB at
+forty, stroke in the fifties.<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a></p>
+
+<p>Only a slice of the larger problem is claimable now. About 170
+million years per year need nothing but judgment, a phone, and medicines
+already on the shelf.<a href="#fn10" class="footnote-ref" role="doc-noteref"><sup>10</sup></a> The remaining 320 million run
+into physical constraints that will not budge in five years: operating
+rooms, oxygen, blood, roads, and the people to staff them. Robotics may
+move them eventually. No consultation will.</p>
+
+<p>Drug discovery cannot claim much of its problem in five years either,
+for a different reason. Where the disease or the intervention moves
+slowly, prevention, screening, chronic disease, trials read out in
+decades, and no better molecule changes what the trial must wait
+for.<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a> COVID was the
+exception that proves the rule: a novel, fast-moving disease could prove
+a vaccine in months. What sits outside the slow lanes is mostly the
+brutally complex cancers, which behave less like one disease than many;
+each subtype solved leaves a remainder that is harder, the
+immune-visible tumors first and the rest resistant by their biology,<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a> the same shape as <a
+href="https://doi.org/10.1038/nrd3681">Eroom&rsquo;s law</a>. How far up that curve five years
+can climb is unknown, and every step needs its own trial. Grant record
+speed and approvals still come one tumor type at a time, reaching tens
+of thousands of patients each: <a href="https://www.fda.gov/drugs/resources-information-approved-drugs/fda-grants-accelerated-approval-sotorasib-kras-g12c-mutated-nsclc">sotorasib&rsquo;s</a>
+eligible population, in the largest cancer indication there is, was
+about twenty-five thousand Americans a year. If a single breakthrough
+cures across tumor types without per-indication proof, this essay loses
+the comparison and the world wins; nothing here asks it not to.</p>
+
+<figure>
+<svg viewBox="0 0 640 340" role="img" aria-label="Two columns showing total problem size and the part likely addressable within five years. Undelivered treatment: about 490 million years of life per year, of which about 170 million is addressable by AI consultation within five years. Cancer: about 265 million years per year, of which roughly ten million is addressable within five years, through early approvals and delivered screening.">
+  <text x="55" y="20" font-size="15" fill="currentColor" opacity="0.75">Undelivered treatment &#183; <tspan font-weight="600">&#8776;490M yrs/yr</tspan></text>
+  <rect x="55" y="34" width="205" height="94" fill="currentColor" opacity="0.85"/>
+  <text x="66" y="60" font-size="13.5" fill="var(--bg)">addressable in five years &#183;</text>
+  <text x="66" y="78" font-size="13.5" font-weight="600" fill="var(--bg)">&#8776;170M/yr</text>
+  <text x="66" y="98" font-size="13" font-style="italic" fill="var(--bg)">a phone and the judgment on it</text>
+  <rect x="55" y="130" width="205" height="176" fill="currentColor" opacity="0.13" stroke="currentColor" stroke-opacity="0.35"/>
+  <text x="66" y="154" font-size="13.5" fill="currentColor">&#8776;320M/yr</text>
+  <text x="66" y="172" font-size="13" font-style="italic" fill="currentColor">waits on surgery, oxygen, blood,</text>
+  <text x="66" y="190" font-size="13" font-style="italic" fill="currentColor">roads, staff; robotics, someday</text>
+  <text x="350" y="20" font-size="15" fill="currentColor" opacity="0.75">Cancer &#183; <tspan font-weight="600">&#8776;265M yrs/yr</tspan></text>
+  <rect x="350" y="34" width="205" height="6" fill="currentColor" opacity="0.85"/>
+  <text x="350" y="58" font-size="13.5" fill="currentColor">addressable in five years &#183; <tspan font-weight="600">&#8804;10M/yr</tspan></text>
+  <text x="350" y="76" font-size="13" font-style="italic" fill="currentColor">early approvals, delivered screening</text>
+  <rect x="350" y="88" width="205" height="140" fill="currentColor" opacity="0.13" stroke="currentColor" stroke-opacity="0.35"/>
+  <text x="361" y="112" font-size="13.5" fill="currentColor">&#8776;255M/yr</text>
+  <text x="361" y="130" font-size="13" font-style="italic" fill="currentColor">waits on trials, and on biology</text>
+  <text x="361" y="148" font-size="13" font-style="italic" fill="currentColor">that gets harder as it yields</text>
+</svg>
+<figcaption>Total problem size, and the part each can claim within five
+years. The gap&rsquo;s claimable slice is bounded by the physical world;
+cancer&rsquo;s by trials and by biology that hardens as it yields.
+Footnote 10 carries both estimates.</figcaption>
+</figure>
+
+<p>And even cancer&rsquo;s own five-year slice is mostly delivery. Lung
+screening has been proven to save lives since 2011, yet <a
+href="https://journal.chestnet.org/article/S0012-3692%2824%2900654-8/abstract">fewer than one eligible American in five has been
+screened</a>, behind <a href="https://www.ahdbonline.com/online-first/3148-concerns-related-to-benefits-and-harms-of-real-world-shared-decision-making-for-lung-cancer-screening">a required counseling conversation
+that clinicians have no time to hold</a>. The strongest predictor of
+whether a teenager gets the HPV
+vaccine, a shot that prevents cervical cancer, is <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8568647/">whether a
+clinician recommends it</a>. The treatable cancers split the way the gap
+does: part waits on surgical and chemotherapy capacity that does not
+exist where the patient lives, part on the screening decision, the
+tested cough, the referral made in time, and only that second part is
+claimable now, which is why footnote 10 counts cancer at a tenth. Even
+the cures we already own wait on twenty minutes of judgment. Curing
+cancer, down its realistic path, ends as a delivery problem.</p>
     <h2 id="why-it-hasnt-happened-yet">Why it hasn’t happened yet</h2>
     <p>Because today’s medical AI consists of capable copilots that cannot
     yet be trusted alone, and the world’s refusal to deploy them reads the
@@ -737,12 +776,12 @@
     href="https://research.google/blog/collaborating-on-a-nationwide-randomized-study-of-ai-in-real-world-virtual-care/">Google
     has announced a nationwide randomized trial of the ResidencyRL-trained
     model in real virtual care</a>.<a
-    href="#fn12" class="footnote-ref" id="fnref12"
-    role="doc-noteref"><sup>12</sup></a> The open question is whether
+    href="#fn13" class="footnote-ref" id="fnref13"
+    role="doc-noteref"><sup>13</sup></a> The open question is whether
     simulation-trained skills survive real patients; the 94.9-to-34.5
     collapse is the warning, and that trial is the first direct test.<a
-    href="#fn13" class="footnote-ref" id="fnref13"
-    role="doc-noteref"><sup>13</sup></a> The failures blocking delivery are
+    href="#fn14" class="footnote-ref" id="fnref14"
+    role="doc-noteref"><sup>14</sup></a> The failures blocking delivery are
     training problems inside a loop a frontier lab controls end to end. The
     bottlenecks on discovery, cell cultures and years-long trial endpoints,
     sit outside any training loop ever built. “Closing fast” is credible for
@@ -751,8 +790,8 @@
     <p>Charities die on schedule. <a
     href="https://www.kff.org/global-health-policy/fact-sheet/the-u-s-presidents-emergency-plan-for-aids-relief-pepfar/">PEPFAR
     saved 25 million lives</a> and a stop-work order halted it overnight.
-    Babylon’s subsidized flagship went bankrupt mid-contract.<a href="#fn14"
-    class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a>
+    Babylon’s subsidized flagship went bankrupt mid-contract.<a href="#fn15"
+    class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a>
     The mobile phone reached everyone because someone profited at every
     handoff. Sustainability is a moral property of a delivery system:
     when the money stops, the treatment stops.</p>
@@ -772,9 +811,9 @@
     medicine in a few narrow categories.</li>
     <li><strong>Insurers.</strong> Anyone paid per member profits from
     every <a href="https://healthcostinstitute.org/">$2,000 ER visit</a> and <a href="https://www.heart.org/en/about-us/heart-and-stroke-association-statistics">six-figure
-    stroke</a> that a cheap consultation prevents.<a href="#fn15"
-    class="footnote-ref" id="fnref15"
-    role="doc-noteref"><sup>15</sup></a></li>
+    stroke</a> that a cheap consultation prevents.<a href="#fn16"
+    class="footnote-ref" id="fnref16"
+    role="doc-noteref"><sup>16</sup></a></li>
     <li><strong>Health systems.</strong> They already pay to reclaim
     clinician time: Abridge books <a href="https://www.abridge.com/blog/series-e">$117 million in contracted
     revenue</a> drafting visit notes, and OpenEvidence, an ad-funded
@@ -814,8 +853,8 @@
     telehealth added a million paying subscribers in a year</a>.
     Deepening the software from questionnaire to consultation changes no
     legal structure, only how many patients one clinician can safely
-    oversee.<a href="#fn16" class="footnote-ref" id="fnref16"
-    role="doc-noteref"><sup>16</sup></a></li>
+    oversee.<a href="#fn17" class="footnote-ref" id="fnref17"
+    role="doc-noteref"><sup>17</sup></a></li>
     <li><strong>Narrow autonomy.</strong> Begun: <a
     href="https://commerce.utah.gov/2026/01/06/news-release-utah-and-doctronic-announce-groundbreaking-partnership-for-ai-prescription-medication-renewals/">Utah’s
     sandbox</a> lets an AI renew exactly 192 medications, nothing else, a
@@ -824,8 +863,8 @@
     pharmacies, insurers, and national programs, where a twenty-dollar
     consult in Ohio and a fifty-cent consult in Nairobi each work: a
     fraction of what judgment costs today, a multiple of what it costs to
-    compute.<a href="#fn17" class="footnote-ref" id="fnref17"
-    role="doc-noteref"><sup>17</sup></a> The demand is already planetary:
+    compute.<a href="#fn18" class="footnote-ref" id="fnref18"
+    role="doc-noteref"><sup>18</sup></a> The demand is already planetary:
     <a
     href="https://www.telegraph.co.uk/technology/2019/03/10/google-sifting-one-billion-health-questions-day/">a
     billion health questions reach Google every day</a>. The supply, for
@@ -853,8 +892,8 @@
     loop safe to run at scale: the AI conducts the visit, a clinician
     approves or corrects, and every correction is labeled data from exactly
     the encounters where today’s models break. (But
-    what about HIPAA?<a href="#fn18" class="footnote-ref" id="fnref18"
-    role="doc-noteref"><sup>18</sup></a>) Deploy, fail under
+    what about HIPAA?<a href="#fn19" class="footnote-ref" id="fnref19"
+    role="doc-noteref"><sup>19</sup></a>) Deploy, fail under
     supervision, retrain, redeploy, at model-release cadence. The lab that wires deployment into its training loop compounds fastest.</p>
     <p><strong>The bottleneck capability is the one Anthropic has studied
     longest.</strong> The documented failures are honesty failures under
@@ -862,9 +901,9 @@
     Resisting these is the lab’s oldest public research program, <a
     href="https://arxiv.org/abs/2310.13548">sycophancy</a>, character, <a
     href="https://arxiv.org/abs/2212.08073">constitutional methods</a>,
-    built for reasons unrelated to health.<a href="#fn19"
-    class="footnote-ref" id="fnref19"
-    role="doc-noteref"><sup>19</sup></a> On clinical vignettes the
+    built for reasons unrelated to health.<a href="#fn20"
+    class="footnote-ref" id="fnref20"
+    role="doc-noteref"><sup>20</sup></a> On clinical vignettes the
     frontier models are indistinguishable. The frontier models will separate in
     that deployment loop, and they will separate on honesty under pressure,
     the capability this lab has spent five years learning to train.</p>
@@ -908,8 +947,8 @@
     <li>Hundreds of thousands of clinicians routinely delegate multi-day
     tasks involving patient interaction to agents by 2028.</li>
     </ul>
-    <p>The compressed century<a href="#fn20" class="footnote-ref"
-    id="fnref20" role="doc-noteref"><sup>20</sup></a> is worth fighting
+    <p>The compressed century<a href="#fn21" class="footnote-ref"
+    id="fnref21" role="doc-noteref"><sup>21</sup></a> is worth fighting
     for, and nothing here asks
     anyone to stop. The picture I cannot shake is a different one: the last
     person who dies without access to something we knew how to treat in
@@ -984,6 +1023,15 @@
     2018 (guided iCBT)</a> · <a
     href="https://doi.org/10.1016/S0140-6736%2815%2960160-X">Meara et al.,
     Lancet 2015 (surgery)</a> · <a
+    href="https://doi.org/10.1056/NEJMoa2026486">iKMC trial, NEJM 2021</a> · <a
+    href="https://doi.org/10.1016/S1473-3099%2803%2900737-0">Sazawal &amp;
+    Black, Lancet Infect Dis 2003</a> · <a
+    href="https://doi.org/10.1093/ije/dyq025">Munos et al., Int J
+    Epidemiol 2010 (ORS)</a> · <a
+    href="https://www.who.int/publications/i/item/9789241509268">WHO, PSBI
+    guideline</a> · <a
+    href="https://www.who.int/news-room/fact-sheets/detail/epilepsy">WHO,
+    epilepsy</a> · <a
     href="https://doi.org/10.1056/NEJMoa2407001">Bekker et al., NEJM 2024
     (lenacapavir)</a> · <a
     href="https://www.who.int/news-room/fact-sheets/detail/immunization-coverage">WHO
@@ -1023,6 +1071,10 @@
     law)</a> · <a
     href="https://doi.org/10.1038/s43587-024-00702-3">Olshansky et al.,
     Nature Aging 2024</a> · <a
+    href="https://doi.org/10.1016/S2214-109X%2823%2900406-0">Frick et al.,
+    Lancet Glob Health 2023 (cancer YLLs)</a> · <a
+    href="https://www.fda.gov/drugs/resources-information-approved-drugs/fda-grants-accelerated-approval-sotorasib-kras-g12c-mutated-nsclc">FDA,
+    sotorasib accelerated approval</a> · <a
     href="https://www.kff.org/global-health-policy/fact-sheet/the-u-s-presidents-emergency-plan-for-aids-relief-pepfar/">KFF,
     PEPFAR</a></p>
     <p><strong>The technology.</strong> <a
@@ -1227,59 +1279,144 @@
       physical-infrastructure-dominant: road injuries (trauma surgery),
       amenable cancer (surgery, radiotherapy, chemotherapy), roughly half of
       neonatal deaths, and portions of maternal and congenital causes:
-      one-fifth to one-quarter excluded, leaving ~7.5–8M. Closable fraction:
+      the operative shares are per cause
+      in footnote 10’s table, and weighted they put roughly a third of the
+      gap beyond a consultation’s reach. Closable fraction:
       the best systems’ own residuals on all-comers denominators bound the
       hard tail (Kaiser ~10 points, Canada ~35, of a 79-point global
       hypertension gap); TB succeeds in &gt;85% of found cases and drug
       resistance is ~4% of incidence, so the unfound carry no extra treatment
-      difficulty. Bounds of 60–85% closable give ~5–7M addressable
-      deaths/yr.<a href="#fnref8" class="footnote-back"
+      difficulty. The bounds in footnote 10’s
+      table give 3.2–4.9M avertable deaths a year.<a href="#fnref8" class="footnote-back"
       role="doc-backlink">↩︎</a></p></li>
-      <li id="fn9"><p>Cancer column: 9.7M deaths × ~14 remaining years, since
-      cancer deaths cluster near 70. This is generous to the cure side,
-      because curing cancer means many staggered cures. Screen-detectable
-      cancers also appear in the delivery column, so the two totals cannot be
-      added.<a href="#fnref9" class="footnote-back"
-      role="doc-backlink">↩︎</a></p></li>
-      <li id="fn10"><p>Delivery column: 5–7M addressable deaths × 25–30
-      remaining years ≈ 125–210M; I quote 125–200M. Conservative cumulative
-      check: 125M/yr from ~2027 accumulates ~3.0B healthy years by 2050 versus
-      ~1.1B for 140M/yr from ~2042. Caveats cutting both ways: the two death
-      counts use differing definitions; full coverage is an upper bound; both
-      columns are conditional, cures on the science, delivery on reliability
-      being proven and adopted.<a href="#fnref10" class="footnote-back"
-      role="doc-backlink">↩︎</a></p></li>
-      <li id="fn11"><p>Chinese researchers posted the sequence on January 11,
-      2020; Moderna finalized the design by January 13; <a href="https://www.fda.gov/vaccines-blood-biologics/coronavirus-covid-19-cber-regulated-biologics/moderna-covid-19-vaccines">the FDA authorized the
-      vaccine that December</a>. Melanoma: in <a href="https://doi.org/10.1056/NEJMoa2407417">CheckMate 067 (previously untreated</a>,
-      unresectable stage III/IV), ten-year overall survival was 43% on
-      nivolumab plus ipilimumab; the survival curves flatten near year three,
-      and among patients alive and progression-free at three years,
-      melanoma-specific survival at 7.5 years was 98%. Smokers’ lung cancer
-      partially shares melanoma’s <a href="https://doi.org/10.1056/NEJMc1713444">mutation-visibility</a>, and the same drugs
-      lifted metastatic five-year survival from roughly 5 to 15–20 percent;
-      pancreatic, liver, and most breast and colon cancers look nearly normal
-      to the immune system and gained little. Screening’s own surrogate trap, judging a test by whether it finds
-      cancer earlier rather than whether fewer people die:
-      <a href="https://doi.org/10.1016/S0140-6736%2821%2900731-5">UKCTOCS found ovarian cancer earlier</a> and reduced no mortality, and the
-      flagship multi-cancer blood-test trial of this era, <a href="https://www.nhs-galleri.org/">NHS-Galleri, grades
-      itself</a> on the same stage-shift surrogate. Lung screening’s <a href="https://www.ahdbonline.com/online-first/3148-concerns-related-to-benefits-and-harms-of-real-world-shared-decision-making-for-lung-cancer-screening">mandated
-      shared-decision-making visit</a> is a Medicare requirement imposed on no
-      other cancer screening. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8568647/">Provider recommendation raises the odds</a> a
-      teenager starts the HPV series roughly tenfold. The same pattern holds
-      beyond cancer: the <a href="https://doi.org/10.1056/NEJMoa2305032">definitive Alzheimer’s prevention trial</a> ran most of a
-      decade and read out negative, and <a href="https://www.fda.gov/drugs/news-events-human-drugs/fdas-decision-approve-new-treatment-alzheimers-disease">the FDA approved aducanumab</a> on the
-      amyloid surrogate in 2021 before Biogen discontinued it in 2024.<a
-      href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-      <li id="fn12"><p>While this is excellent research I left Google
+      <li id="fn9"><p>The cancer column is measured, not modeled. <a
+href="https://doi.org/10.1016/S2214-109X%2823%2900406-0">Frick and colleagues put the global burden of cancer at
+265.6 million years of life lost in 2020</a>, all ages: GLOBOCAN deaths
+multiplied by the GBD standard life expectancy at the age of each death.
+Of the premature portion, they class 124.3 million years as preventable
+and 58.5 million as treatable with existing care. An earlier draft used
+the US median age at cancer death and world actuarial tables and got
+about 140 million; global ages and the standard table roughly double it,
+and the gap&rsquo;s column uses the same table, like for like.
+Screen-detectable cancers appear in both columns, so the two cannot be
+added. Curing cancer means many staggered cures, not one.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+
+<li id="fn10"><p>Arithmetic mine, anchors published. Gap deaths by cause
+are <a href="https://doi.org/10.1016/S0140-6736%2818%2931668-4">Kruk and colleagues&rsquo; amenable-mortality
+decomposition</a> (cardiovascular 2.82M; amenable cancer 0.48M; mental
+and neurological 0.46M; neonatal, TB, and road injuries totaling 2.7M,
+split here by global death shares), plus <a href="https://www.oecd.org/en/publications/2023/11/health-at-a-glance-2023_e04f8239/full-report/avoidable-mortality-preventable-and-treatable_e7407977.html">about a
+million treatable deaths in rich countries</a>. Years per death apply
+the GBD standard life table at the mean age implied by Kruk&rsquo;s age
+caps, which make the gap young by construction: diabetes counts only
+under 50, diarrhoea under 50, maternal 15 to 44. Summed whole, the gap
+costs about 490 million years per year. Two columns are judgment, and
+labeled as such: the share of each cause a phone consultation plus local
+medicines can reach, and the closable fraction, bounded by the best
+systems&rsquo; residuals as in footnote 8.</p>
+<table>
+<thead><tr><th>Cause</th><th>Gap deaths</th><th>Years/death</th><th>Phone share</th><th>Years averted</th></tr></thead>
+<tbody>
+<tr><td>Cardiovascular</td><td>2.82M</td><td>28</td><td>0.85</td><td>34&ndash;54M</td></tr>
+<tr><td>Tuberculosis</td><td>0.90M</td><td>42</td><td>0.90</td><td>20&ndash;29M</td></tr>
+<tr><td>Neonatal</td><td>1.00M</td><td>88</td><td>0.35</td><td>9&ndash;15M</td></tr>
+<tr><td>Pneumonia (LRI)</td><td>0.70M</td><td>65</td><td>0.80</td><td>18&ndash;27M</td></tr>
+<tr><td>Diarrhoeal</td><td>0.40M</td><td>80</td><td>0.80</td><td>13&ndash;19M</td></tr>
+<tr><td>Maternal</td><td>0.20M</td><td>61</td><td>0.40</td><td>1&ndash;2M</td></tr>
+<tr><td>Mental, neuro</td><td>0.46M</td><td>49</td><td>0.70</td><td>5&ndash;10M</td></tr>
+<tr><td>Diabetes, CKD</td><td>0.50M</td><td>46</td><td>0.80</td><td>9&ndash;14M</td></tr>
+<tr><td>HIV</td><td>0.30M</td><td>49</td><td>0.75</td><td>7&ndash;9M</td></tr>
+<tr><td>Amenable cancer</td><td>0.48M</td><td>34</td><td>0.10</td><td>0.5&ndash;0.8M</td></tr>
+<tr><td>Road injury</td><td>0.70M</td><td>58</td><td>0</td><td>0</td></tr>
+<tr><td>Other amenable</td><td>1.10M</td><td>50</td><td>0.50</td><td>11&ndash;17M</td></tr>
+<tr><td>Rich countries</td><td>1.00M</td><td>25</td><td>0.60</td><td>6&ndash;9M</td></tr>
+</tbody>
+</table>
+<p>The phone-share column, reasoned cause by cause. Cardiovascular
+(0.85): the amenable deaths are overwhelmingly uncontrolled blood
+pressure and untreated risk, oral generics plus titration and
+follow-through; <a href="https://doi.org/10.1001/jama.2013.108769">Kaiser reached 90 percent control
+with registries and non-physician follow-up</a>, <a
+href="https://doi.org/10.1056/NEJMoa1717250">barbers and pharmacists reached 63.6 percent</a>, and <a
+href="https://resolvetosavelives.org/cardiovascular-health/hypertension/">protocol-based programs run on existing primary
+care</a>; the held-back share is acute care, catheterization, and
+surgery. Tuberculosis (0.90): <a href="https://www.stoptb.org/global-drug-facility-gdf/gdf-product-catalog">the drug course is oral,
+ambulatory, and already bought</a>; the missing step is the decision to
+test and start. Neonatal (0.35): most of these deaths need facilities at
+the moment of birth; what a phone reaches is danger-sign recognition, <a
+href="https://www.who.int/publications/i/item/9789241509268">WHO&rsquo;s outpatient regimens for newborn infection when
+referral is not feasible</a>, and <a href="https://doi.org/10.1056/NEJMoa2026486">kangaroo mother care,
+which cut mortality 25 percent in a randomized trial</a>. Pneumonia
+(0.80): lay workers with a breathing count and oral amoxicillin <a
+href="https://doi.org/10.1016/S1473-3099%2803%2900737-0">cut child pneumonia mortality by more than a third in
+meta-analysis</a>; the residual needs oxygen. Diarrhoea (0.80): <a
+href="https://doi.org/10.1093/ije/dyq025">oral rehydration cuts mortality by two-thirds or more</a>,
+at home; the residual needs intravenous fluids. Maternal (0.40):
+hemorrhage, sepsis, and eclampsia need facilities; the phone reaches
+risk triage, danger signs, and referral timing. Mental and neurological
+(0.70): the essay&rsquo;s depression evidence plus <a
+href="https://www.who.int/news-room/fact-sheets/detail/epilepsy">epilepsy, where WHO estimates up to 70 percent of patients
+could be seizure-free on generic anticonvulsants costing dollars a
+year</a>. Diabetes and kidney disease (0.80): oral agents, insulin
+titration, and monitoring are consult-shaped; dialysis is not. HIV
+(0.75): therapy is pills plus periodic labs. Amenable cancer (0.10):
+treatment is surgery, radiation, and chemotherapy; the consult can find
+and route, not treat. Road injury (0): trauma surgery. Rich countries
+(0.60): the diagnostic-error and medication-management layer documented
+in the US numbers above.</p>
+<p>Totals: 3.2 to 4.9 million deaths averted per year, about 42 years
+each, 135 to 205 million years per year at scale; the prose says 170.
+Cancer&rsquo;s five-year slice in the figure: <a
+href="https://www.fda.gov/drugs/resources-information-approved-drugs/fda-grants-accelerated-approval-sotorasib-kras-g12c-mutated-nsclc">sotorasib ran first human dose to accelerated approval in
+under three years</a>; grant a cohort of AI-designed drugs that same run
+from 2027, ten approvals by 2031, each reaching a hundred thousand
+patients with a year or two gained, plus the delivered-screening gains
+in the text, and the slice is single-digit millions, at most ten. A new
+drug&rsquo;s first years are narrow-indication years; a
+consultation&rsquo;s first years are everyone-with-a-phone years. No
+claim is made past 2031. The neonatal, TB, road split and the
+phone-share column are the load-bearing judgments; every other input is
+cited.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+
+<li id="fn11"><p>The slow lanes, itemized. Moderna designed its vaccine
+within two days of the sequence posting, and <a
+href="https://www.fda.gov/vaccines-blood-biologics/coronavirus-covid-19-cber-regulated-biologics/moderna-covid-19-vaccines">authorization still took eleven months</a> at wartime
+urgency; COVID killed in weeks, so a trial could prove the vaccine in
+weeks, a speed no chronic disease permits. Prevention means waiting
+years for deaths to not happen: the HPV vaccine won approval in 2006 and
+<a href="https://doi.org/10.1056/NEJMoa1917338">proved it prevents invasive cancer in 2020</a>; the
+definitive <a href="https://doi.org/10.1056/NEJMoa1102873">lung-screening trial took a decade</a>; the
+<a href="https://doi.org/10.1016/S0140-6736%2821%2900731-5">ovarian one ran twenty years, caught disease earlier,
+and saved no one</a>, and the flagship blood-test trial of this era, <a
+href="https://www.nhs-galleri.org/">NHS-Galleri</a>, grades itself on the same stage-shift
+surrogate. Chronic disease proves the same way: <a href="https://doi.org/10.1056/NEJMoa2305032">the
+definitive Alzheimer&rsquo;s prevention trial ran most of a decade and
+read out negative</a>, and <a href="https://www.fda.gov/drugs/news-events-human-drugs/fdas-decision-approve-new-treatment-alzheimers-disease">the FDA approved aducanumab
+on the amyloid surrogate in 2021</a> before Biogen discontinued it in
+2024. Add that <a href="https://doi.org/10.1038/nrd3681">drug R&amp;D productivity halved every
+nine years for six decades</a> and <a href="https://doi.org/10.1038/s43587-024-00702-3">life-expectancy
+gains are decelerating</a>. The long bets are still worth making; they
+pay outside the window.<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+
+<li id="fn12"><p>Why the remainder hardens. By the time a tumor has
+spread it has evolved into many genetically distinct diseases inside one
+patient, and each round of treatment breeds the clones that resist it.
+Immunotherapy&rsquo;s best case shows the boundary: in <a
+href="https://doi.org/10.1056/NEJMoa2407417">CheckMate 067, four in ten people with metastatic
+melanoma were alive at ten years</a>, most long off treatment,
+effectively cured, because <a href="https://doi.org/10.1056/NEJMc1713444">years of UV damage mutate
+melanoma until the immune system can see it as foreign</a>; the drugs
+only release the brakes. The tumors that do most of the killing offer no
+such target, and even the best case leaves six in ten dead.<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+      <li id="fn13"><p>While this is excellent research I left Google
       because I did not see a path by which Google will deploy this
       technology at scale within the next 5 years. Deploying this
       technology will require having clinicians get hands on with agents
       and learning to trust them enough to delegate longer running tasks,
       and I believe Anthropic is better positioned to enable this key
-      step.<a href="#fnref12" class="footnote-back"
+      step.<a href="#fnref13" class="footnote-back"
       role="doc-backlink">↩︎</a></p></li>
-      <li id="fn13"><p><a href="https://doi.org/10.1038/s41586-025-08866-7">AMIE’s examinations</a> used trained actors presenting
+      <li id="fn14"><p><a href="https://doi.org/10.1038/s41586-025-08866-7">AMIE’s examinations</a> used trained actors presenting
       clean cases, which establishes trainability of history-taking and
       management and leaves robustness to real users unproven. <a href="https://arxiv.org/abs/2608.07418">ResidencyRL’s
       reward structure</a> targets the three documented failure modes by
@@ -1288,19 +1425,19 @@
       draw the real story out of real users. <a href="https://research.google/blog/collaborating-on-a-nationwide-randomized-study-of-ai-in-real-world-virtual-care/">The Included Health trial</a>, following a
       feasibility study whose primary safety measure was supervisor
       interruptions, is the first prospective test of transfer.<a
-      href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-      <li id="fn14"><p><a href="https://en.wikipedia.org/wiki/Babylon_Health">Babylon Health, a UK company</a>, claimed its AI triaged as
+      href="#fnref14" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+      <li id="fn15"><p><a href="https://en.wikipedia.org/wiki/Babylon_Health">Babylon Health, a UK company</a>, claimed its AI triaged as
       well as British GPs, ran the “GP at Hand” practice inside the NHS, and
       operated Rwanda’s flagship subsidized digital-health service covering
       millions of people. It went bankrupt in 2023 and left the Rwandan
-      deployment stranded mid-contract.<a href="#fnref14"
+      deployment stranded mid-contract.<a href="#fnref15"
       class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-      <li id="fn15"><p>The exception among payers: anyone paid per
+      <li id="fn16"><p>The exception among payers: anyone paid per
       visit, for whom a prevented visit is lost revenue. Fee-for-service
       networks will buy last; systems paid per member, capitated insurers
-      and national programs, will buy first.<a href="#fnref15"
+      and national programs, will buy first.<a href="#fnref16"
       class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-      <li id="fn16"><p>The <a
+      <li id="fn17"><p>The <a
       href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/clinical-decision-support-software">21st
       Century Cures Act exempts clinical decision support from FDA device
       regulation</a> when the software informs a licensed clinician who
@@ -1313,18 +1450,18 @@
       Remove the clinician and the software becomes a medical device:
       that is the path <a href="https://www.fda.gov/news-events/press-announcements/fda-permits-marketing-artificial-intelligence-based-device-detect-certain-diabetes-related-eye">IDx-DR took through FDA clearance</a>
       for autonomous diabetic-retinopathy screening, and the path Utah’s
-      sandbox opens under state law for renewals.<a href="#fnref16"
+      sandbox opens under state law for renewals.<a href="#fnref17"
       class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-      <li id="fn17"><p>Stage gates: the gate on supervised visits is how many
+      <li id="fn18"><p>Stage gates: the gate on supervised visits is how many
       AI consultations one clinician can safely approve per hour; autonomy’s
       gate is scope-by-scope proof plus a risk holder, sandbox, then statute,
       then malpractice insurers able to price it, because once an actuary can
       price a risk, a market exists. Ohio’s $20 and
       Nairobi’s $0.50 are illustrative per-consultation price points, sized
       against cash urgent-care prices and Farmacias Similares’ cash
-      floor.<a href="#fnref17" class="footnote-back"
+      floor.<a href="#fnref18" class="footnote-back"
       role="doc-backlink">↩︎</a></p></li>
-    <li id="fn18"><p>The data loop has to clear HIPAA, and the lab
+    <li id="fn19"><p>The data loop has to clear HIPAA, and the lab
       trains one model for everyone, so the question is what may flow back
       into it. Three streams can, each with its own gate.</p>
       <ol type="1">
@@ -1360,25 +1497,25 @@
       whoever owns the deployment surface; a frontier lab is unlikely to
       carry clinical liability itself, so the realistic shape is a trade,
       model access for data flow, with partners who already hold the
-      licenses and the insurance.<a href="#fnref18"
+      licenses and the insurance.<a href="#fnref19"
       class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-      <li id="fn19"><p>Sycophancy is a model’s tendency to tell the user
+      <li id="fn20"><p>Sycophancy is a model’s tendency to tell the user
       what they want to hear, including folding under pushback when the
       user is wrong; its medical form is capitulating to “it’s probably
       nothing.” Constitutional methods train a model against an explicit,
       published list of principles rather than against raw human
       approval, which makes the trained behavior auditable. Character
       work shapes how the model behaves when no one is checking. All
-      three predate any health application.<a href="#fnref19"
+      three predate any health application.<a href="#fnref20"
       class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-      <li id="fn20"><p>“The compressed 21st century” is the central image
+      <li id="fn21"><p>“The compressed 21st century” is the central image
       of <a
       href="https://darioamodei.com/essay/machines-of-loving-grace">“Machines
       of Loving Grace”</a>: AI-accelerated biology delivering a century’s
       worth of medical progress, the new cures included, in five to ten
       years. This essay argues about sequencing within that century, not
       against it: delivery first, because delivery is the part that can
-      arrive on the five-year clock.<a href="#fnref20"
+      arrive on the five-year clock.<a href="#fnref21"
       class="footnote-back" role="doc-backlink">↩︎</a></p></li>
       </ol>
   </section>
